@@ -1,97 +1,94 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>T≡M Theory — Time Is Motion · Mateo Moreira</title>
-<meta name="description" content="T≡M Theory — Time Is Motion. Investigación independiente de Mateo Moreira: la hipótesis del tiempo como movimiento, sus consecuencias abductivas y Datos Coherentes.">
+<meta name="description" content="T≡M Theory — Time Is Motion. Independent research by Mateo Moreira: time and motion as the same principle, its abductive consequences, and Coherent Data.">
+<meta property="og:title" content="T≡M Theory — Time Is Motion">
+<meta property="og:description" content="Time is not a container in which things move: time is motion. Independent research by Mateo Moreira.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mateomoreira-uy.github.io/time-is-motion/">
 <style>
   :root{ --bg:#1a1918; --ink:#eae7e2; --mid:#807d7a; --soft:#4d4b49; --accent:#d95436; }
   *{ margin:0; padding:0; box-sizing:border-box; }
   body{ background:var(--bg); color:var(--ink); font-family:Georgia, 'Times New Roman', serif; line-height:1.7; }
-  .mono{ font-family:'Courier New', monospace; }
   main{ max-width:880px; margin:0 auto; padding:0 20px 80px; }
+  /* language toggle, fixed top right */
+  .tem-lang{ position:fixed; top:14px; right:16px; display:flex; gap:6px; z-index:10; }
+  .tem-lang button{ font:11px/1 'Courier New', monospace; letter-spacing:.12em; padding:6px 12px; background:var(--bg); color:var(--mid); border:1px solid var(--soft); cursor:pointer; }
+  .tem-lang button.active{ color:var(--ink); border-color:var(--ink); }
   /* hero */
   .tem-hero{ width:100%; aspect-ratio:16/9; margin-top:28px; }
   .tem-hero canvas{ width:100%; height:100%; display:block; image-rendering:pixelated; image-rendering:crisp-edges; }
-  .hero-caption{ display:flex; justify-content:space-between; align-items:center; margin-top:10px; }
-  .hero-caption p{ font-size:13px; color:var(--mid); font-style:italic; }
-  .tem-lang{ display:flex; gap:8px; }
-  .tem-lang button{ font:11px/1 'Courier New', monospace; letter-spacing:.12em; padding:6px 13px; background:transparent; color:var(--mid); border:1px solid var(--soft); cursor:pointer; }
-  .tem-lang button.active{ color:var(--ink); border-color:var(--ink); }
-  /* header text */
   header.site{ margin-top:52px; }
   h1{ font-size:clamp(30px,5vw,44px); font-weight:normal; letter-spacing:.01em; }
   h1 .eq{ color:var(--accent); }
   .subtitle{ font-size:17px; color:var(--mid); margin-top:8px; }
   .thesis{ margin-top:26px; font-size:19px; max-width:640px; }
-  /* sections */
   section{ margin-top:72px; }
   h2{ font:15px 'Courier New', monospace; letter-spacing:.28em; text-transform:uppercase; color:var(--mid); border-bottom:1px solid var(--soft); padding-bottom:10px; margin-bottom:26px; }
-  /* timeline */
-  .timeline{ font-family:'Courier New', monospace; font-size:14px; }
-  .timeline li{ list-style:none; display:flex; gap:18px; padding:9px 0; border-bottom:1px dashed #2b2a28; }
+  .timeline li{ list-style:none; display:flex; gap:18px; padding:9px 0; border-bottom:1px dashed #2b2a28; font-family:'Courier New', monospace; font-size:14px; }
   .timeline .yr{ color:var(--accent); min-width:52px; }
-  /* archive table */
   table{ width:100%; border-collapse:collapse; font-size:14.5px; }
   th{ font:12px 'Courier New', monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--mid); text-align:left; padding:8px 10px 8px 0; border-bottom:1px solid var(--soft); }
   td{ padding:12px 10px 12px 0; border-bottom:1px solid #2b2a28; vertical-align:top; }
   a{ color:var(--accent); text-decoration:none; }
   a:hover{ text-decoration:underline; }
   .muted{ color:var(--mid); }
-  /* revisions */
   .rev{ margin-bottom:28px; }
-  .rev h3{ font:14px 'Courier New', monospace; letter-spacing:.08em; color:var(--ink); margin-bottom:6px; }
+  .rev h3{ font:14px 'Courier New', monospace; letter-spacing:.08em; margin-bottom:6px; }
   .rev p{ font-size:15px; color:#c9c6c1; max-width:680px; }
   .rev .lbl{ color:var(--accent); font-family:'Courier New', monospace; font-size:12px; letter-spacing:.1em; }
+  pre.bibtex{ font:13px/1.6 'Courier New', monospace; color:#c9c6c1; background:#211f1e; border:1px solid var(--soft); padding:18px; overflow-x:auto; white-space:pre; }
+  .about p{ font-size:16.5px; max-width:680px; margin-bottom:14px; }
   footer{ margin-top:90px; padding-top:24px; border-top:1px solid var(--soft); font-size:14px; color:var(--mid); }
   footer a{ color:var(--mid); text-decoration:underline; }
   @media (max-width:640px){ table, thead, tbody, tr{ display:block; } th{ display:none; } td{ display:block; border-bottom:none; padding:3px 0; } tr{ border-bottom:1px solid #2b2a28; padding:12px 0; } }
 </style>
 </head>
 <body>
+
+<div class="tem-lang">
+  <button id="lang-en" class="active" type="button">EN</button>
+  <button id="lang-es" type="button">ES</button>
+</div>
+
 <main>
 
   <div class="tem-hero"><canvas id="tem-canvas" width="384" height="216"
-    aria-label="Un niño salta de baldosa en baldosa diciendo tiempo, movimiento, cada vez más rápido, mientras el mundo pasa de gris a color."></canvas></div>
-  <div class="hero-caption">
-    <p>Un niño salta sobre las baldosas del mismo color. Cada salto, más rápido.</p>
-    <div class="tem-lang">
-      <button id="lang-es" class="active" type="button">ES</button>
-      <button id="lang-en" type="button">EN</button>
-    </div>
-  </div>
+    aria-label="A kid hops tile to tile saying time, motion, faster and faster, while the world turns from gray to color. / Un niño salta de baldosa en baldosa diciendo tiempo, movimiento, cada vez más rápido, mientras el mundo pasa de gris a color."></canvas></div>
 
   <header class="site">
     <h1>T<span class="eq">≡</span>M Theory — Time Is Motion</h1>
-    <p class="subtitle">Investigación independiente · Mateo Moreira · Uruguay</p>
-    <p class="thesis">El tiempo no es un contenedor donde las cosas se mueven: el tiempo <em>es</em> el movimiento. Una hipótesis, sus consecuencias abductivas, y la ontología que la sostiene — publicadas en abierto, corregidas en público.</p>
+    <p class="subtitle" data-i18n="subtitle">Independent research · Mateo Moreira · Uruguay</p>
+    <p class="thesis" data-i18n="thesis">Time is not a container in which things move: time <em>is</em> motion. One hypothesis, its abductive consequences, and the ontology beneath it.</p>
   </header>
 
   <section id="timeline">
-    <h2>Línea de tiempo</h2>
+    <h2 data-i18n="h_timeline">Timeline</h2>
     <ul class="timeline">
-      <li><span class="yr">2018</span><span>Primer email — la intuición del Tempo</span></li>
-      <li><span class="yr">2025</span><span>T≡M v1.0 — la hipótesis publicada · Tempo Symbol Identity — el símbolo</span></li>
-      <li><span class="yr">2026</span><span>v2.0 → v2.1 — del residuo constante al drift diferencial (ε_R)</span></li>
-      <li><span class="yr">2026</span><span>Companion Paper — consecuencias abductivas de la unificación en Tempo</span></li>
-      <li><span class="yr">2026</span><span>Datos Coherentes — solo lo coherente existe</span></li>
-      <li><span class="yr">…</span><span class="muted">Trabajo futuro</span></li>
+      <li><span class="yr">2018</span><span data-i18n="tl_2018">First email — the Tempo intuition</span></li>
+      <li><span class="yr">2025</span><span data-i18n="tl_2025">T≡M v1.0 — the hypothesis published · Tempo Symbol Identity — the symbol</span></li>
+      <li><span class="yr">2026</span><span data-i18n="tl_2026a">v2.0 → v2.1 — from constant residual to differential drift (ε_R)</span></li>
+      <li><span class="yr">2026</span><span data-i18n="tl_2026b">Companion Paper — abductive consequences of the Tempo unification</span></li>
+      <li><span class="yr">2026</span><span data-i18n="tl_2026c">Coherent Data — only the coherent exists</span></li>
+      <li><span class="yr">…</span><span class="muted" data-i18n="tl_future">Future work</span></li>
     </ul>
   </section>
 
   <section id="archive">
     <h2>Research Archive</h2>
     <table>
-      <thead><tr><th>Documento</th><th>Versión</th><th>Fecha</th><th>DOI</th></tr></thead>
+      <thead><tr><th data-i18n="th_doc">Document</th><th data-i18n="th_ver">Version</th><th data-i18n="th_date">Date</th><th>DOI</th></tr></thead>
       <tbody>
         <tr><td>T≡M Theory — Time Is Motion</td><td>v1.0</td><td>Nov 2025</td><td><a href="https://doi.org/10.5281/zenodo.17514234">10.5281/zenodo.17514234</a></td></tr>
+        <tr><td>Tempo Symbol Identity — <span data-i18n="sym_note">symbol design pack</span></td><td>v1.0</td><td>Nov 2025</td><td><a href="https://doi.org/10.5281/zenodo.17545235">10.5281/zenodo.17545235</a></td></tr>
         <tr><td>T≡M Theory — Cosmological Expansion as the Root Tick</td><td>v2.0</td><td>Mar 2026</td><td><a href="https://doi.org/10.5281/zenodo.18856653">10.5281/zenodo.18856653</a></td></tr>
-        <tr><td>T≡M Theory — Cosmological Expansion as the Root Tick</td><td>v2.1</td><td>Jun 2026</td><td><a href="https://doi.org/10.5281/zenodo.20779567">10.5281/zenodo.20779567</a></td></tr>
         <tr><td>Companion — Consecuencias Abductivas de la Unificación en Tempo</td><td>v1.0</td><td>May 2026</td><td><a href="https://doi.org/10.5281/zenodo.20349781">10.5281/zenodo.20349781</a></td></tr>
+        <tr><td>T≡M Theory — Cosmological Expansion as the Root Tick</td><td>v2.1</td><td>Jun 2026</td><td><a href="https://doi.org/10.5281/zenodo.20779567">10.5281/zenodo.20779567</a></td></tr>
         <tr><td>Companion — Abductive Consequences of the Tempo Unification</td><td>v1.1</td><td>Jul 2026</td><td><a href="https://doi.org/10.5281/zenodo.21208371">10.5281/zenodo.21208371</a></td></tr>
         <tr><td>Coherent Data — Only the Coherent Exists</td><td>v1.0</td><td>Jul 2026</td><td><a href="https://doi.org/10.5281/zenodo.21230276">10.5281/zenodo.21230276</a></td></tr>
-        <tr><td>Tempo Symbol Identity (diseño del símbolo)</td><td>v1.0</td><td>Nov 2025</td><td><a href="https://doi.org/10.5281/zenodo.17545235">10.5281/zenodo.17545235</a></td></tr>
       </tbody>
     </table>
   </section>
@@ -100,10 +97,29 @@
     <h2>Reviews &amp; Revisions</h2>
     <div class="rev">
       <h3>v2.0 → v2.1</h3>
-      <p><span class="lbl">PROBLEMA</span> — El residuo constante (α_R) no era observable: un corrimiento universal idéntico en todos los relojes es indistinguible de una redefinición de unidades.</p>
-      <p><span class="lbl">RESOLUCIÓN</span> — La v2.1 introduce el drift diferencial (ε_R): diferencias entre tipos de reloj según su estructura de coherencia, una firma en principio medible, con cota |Δε_R| ≲ 10⁻⁸.</p>
+      <p><span class="lbl" data-i18n="lbl_issue">ISSUE</span> — <span data-i18n="rev_issue">The constant residual (α_R) was not observable: a universal shift identical across all clocks is indistinguishable from a redefinition of units.</span></p>
+      <p><span class="lbl" data-i18n="lbl_res">RESOLUTION</span> — <span data-i18n="rev_res">v2.1 introduces the differential drift (ε_R): differences between clock types according to their coherence structure — a signature measurable in principle, with bound |Δε_R| ≲ 10⁻⁸.</span></p>
     </div>
-    <p class="muted" style="font-size:14px;">Historial completo en el <a href="https://github.com/mateomoreira-uy/time-is-motion/blob/main/CHANGELOG.md">CHANGELOG</a> del repositorio.</p>
+    <p class="muted" style="font-size:14px;"><span data-i18n="rev_full">Full history in the repository</span> <a href="https://github.com/mateomoreira-uy/time-is-motion/blob/main/CHANGELOG.md">CHANGELOG</a>.</p>
+  </section>
+
+  <section id="cite">
+    <h2 data-i18n="h_cite">How to cite</h2>
+    <pre class="bibtex">@misc{moreira2026tem,
+  author    = {Moreira, Mateo},
+  title     = {T≡M Theory — Time Is Motion:
+               Cosmological Expansion as the Root Tick (v2.1)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20779567},
+  url       = {https://doi.org/10.5281/zenodo.20779567}
+}</pre>
+  </section>
+
+  <section id="about" class="about">
+    <h2 data-i18n="h_about">About</h2>
+    <p data-i18n="about_1">I am Mateo Moreira, an independent researcher from Uruguay. T≡M did not begin as a paper: it began as a childhood memory — hopping across the same-colored tiles of a sidewalk — and became words for the first time in an email written in 2018.</p>
+    <p data-i18n="about_2">Everything that followed — the theory, its revisions, the Companion Paper, Coherent Data — is published with a DOI, including the corrections. This site gathers all of it in one place.</p>
   </section>
 
   <footer>
@@ -112,10 +128,11 @@
     <a href="https://github.com/mateomoreira-uy/time-is-motion">GitHub</a> ·
     <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Moreira%2C%20Mateo%22">Zenodo</a> ·
     <a href="https://medium.com/@mateomoreira_83879">Medium</a></p>
-    <p style="margin-top:8px;">Documentos: CC BY 4.0 · Símbolo: CC BY-NC 4.0 · Código: MIT</p>
+    <p style="margin-top:8px;" data-i18n="lic">Papers: CC BY 4.0 · Symbol: CC BY-NC 4.0 · Code: MIT</p>
   </footer>
 
 </main>
+
 <script>
 
 /* ============================================================
@@ -140,7 +157,7 @@
     es: { even: 'TIEMPO', odd: 'MOVIMIENTO', final: 'TEMPO' },
     en: { even: 'TIME',   odd: 'MOTION',     final: 'TEMPO' },
   };
-  let lang = /[?&]lang=en/.test(location.search) ? 'en' : 'es';
+  let lang = /[?&]lang=es/.test(location.search) ? 'es' : 'en';
 
   // ---------- palettes ----------
   const GRAY = ['#211f1e', '#4d4b49', '#807d7a', '#b5b2ae', '#eae7e2'];
@@ -437,6 +454,82 @@
   window.temSetLang = setLang; // hook for the site's own language toggle
 })();
 
+</script>
+<script>
+(function(){
+  'use strict';
+  var I18N = {
+    en: {
+      subtitle: 'Independent research \u00b7 Mateo Moreira \u00b7 Uruguay',
+      thesis: 'Time is not a container in which things move: time <em>is</em> motion. One hypothesis, its abductive consequences, and the ontology beneath it.',
+      h_timeline: 'Timeline',
+      tl_2018: 'First email \u2014 the Tempo intuition',
+      tl_2025: 'T\u2261M v1.0 \u2014 the hypothesis published \u00b7 Tempo Symbol Identity \u2014 the symbol',
+      tl_2026a: 'v2.0 \u2192 v2.1 \u2014 from constant residual to differential drift (\u03b5_R)',
+      tl_2026b: 'Companion Paper \u2014 abductive consequences of the Tempo unification',
+      tl_2026c: 'Coherent Data \u2014 only the coherent exists',
+      tl_future: 'Future work',
+      th_doc: 'Document', th_ver: 'Version', th_date: 'Date',
+      sym_note: 'symbol design pack',
+      lbl_issue: 'ISSUE', lbl_res: 'RESOLUTION',
+      rev_issue: 'The constant residual (\u03b1_R) was not observable: a universal shift identical across all clocks is indistinguishable from a redefinition of units.',
+      rev_res: 'v2.1 introduces the differential drift (\u03b5_R): differences between clock types according to their coherence structure \u2014 a signature measurable in principle, with bound |\u0394\u03b5_R| \u2272 10\u207b\u2078.',
+      rev_full: 'Full history in the repository',
+      h_cite: 'How to cite',
+      h_about: 'About',
+      about_1: 'I am Mateo Moreira, an independent researcher from Uruguay. T\u2261M did not begin as a paper: it began as a childhood memory \u2014 hopping across the same-colored tiles of a sidewalk \u2014 and became words for the first time in an email written in 2018.',
+      about_2: 'Everything that followed \u2014 the theory, its revisions, the Companion Paper, Coherent Data \u2014 is published with a DOI, including the corrections. This site gathers all of it in one place.',
+      lic: 'Papers: CC BY 4.0 \u00b7 Symbol: CC BY-NC 4.0 \u00b7 Code: MIT'
+    },
+    es: {
+      subtitle: 'Investigaci\u00f3n independiente \u00b7 Mateo Moreira \u00b7 Uruguay',
+      thesis: 'El tiempo no es un contenedor donde las cosas se mueven: el tiempo <em>es</em> el movimiento. Una hip\u00f3tesis, sus consecuencias abductivas, y la ontolog\u00eda que la sostiene.',
+      h_timeline: 'L\u00ednea de tiempo',
+      tl_2018: 'Primer email \u2014 la intuici\u00f3n del Tempo',
+      tl_2025: 'T\u2261M v1.0 \u2014 la hip\u00f3tesis publicada \u00b7 Tempo Symbol Identity \u2014 el s\u00edmbolo',
+      tl_2026a: 'v2.0 \u2192 v2.1 \u2014 del residuo constante al drift diferencial (\u03b5_R)',
+      tl_2026b: 'Companion Paper \u2014 consecuencias abductivas de la unificaci\u00f3n en Tempo',
+      tl_2026c: 'Datos Coherentes \u2014 solo lo coherente existe',
+      tl_future: 'Trabajo futuro',
+      th_doc: 'Documento', th_ver: 'Versi\u00f3n', th_date: 'Fecha',
+      sym_note: 'pack de dise\u00f1o del s\u00edmbolo',
+      lbl_issue: 'PROBLEMA', lbl_res: 'RESOLUCI\u00d3N',
+      rev_issue: 'El residuo constante (\u03b1_R) no era observable: un corrimiento universal id\u00e9ntico en todos los relojes es indistinguible de una redefinici\u00f3n de unidades.',
+      rev_res: 'La v2.1 introduce el drift diferencial (\u03b5_R): diferencias entre tipos de reloj seg\u00fan su estructura de coherencia \u2014 una firma en principio medible, con cota |\u0394\u03b5_R| \u2272 10\u207b\u2078.',
+      rev_full: 'Historial completo en el',
+      h_cite: 'C\u00f3mo citar',
+      h_about: 'Sobre el autor',
+      about_1: 'Soy Mateo Moreira, investigador independiente de Uruguay. T\u2261M no empez\u00f3 como un paper: empez\u00f3 como un recuerdo de infancia \u2014 saltando sobre las baldosas del mismo color de una vereda \u2014 y se volvi\u00f3 palabras por primera vez en un email escrito en 2018.',
+      about_2: 'Todo lo que sigui\u00f3 \u2014 la teor\u00eda, sus revisiones, el Companion Paper, Datos Coherentes \u2014 est\u00e1 publicado con DOI, incluidas las correcciones. Este sitio lo re\u00fane todo en un solo lugar.',
+      lic: 'Documentos: CC BY 4.0 \u00b7 S\u00edmbolo: CC BY-NC 4.0 \u00b7 C\u00f3digo: MIT'
+    }
+  };
+  var current = 'en';
+  try {
+    var saved = localStorage.getItem('tem-lang');
+    if (saved === 'es' || saved === 'en') current = saved;
+  } catch(e){}
+  if (/[?&]lang=es/.test(location.search)) current = 'es';
+
+  function apply(lang){
+    current = lang;
+    var dict = I18N[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if (dict[k] !== undefined) el.innerHTML = dict[k];
+    });
+    document.documentElement.lang = lang;
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+    if (window.temSetLang) window.temSetLang(lang);
+    try { localStorage.setItem('tem-lang', lang); } catch(e){}
+  }
+  /* the animation script already wires lang buttons for itself;
+     apply() re-toggles classes and syncs everything, so we just add page-level handlers */
+  document.getElementById('lang-en').addEventListener('click', function(){ apply('en'); });
+  document.getElementById('lang-es').addEventListener('click', function(){ apply('es'); });
+  if (current !== 'en') apply(current);
+})();
 </script>
 </body>
 </html>
