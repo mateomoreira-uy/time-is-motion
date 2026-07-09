@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>T≡M Theory — Time Is Motion · Mateo Moreira</title>
+<meta name="description" content="T≡M Theory — Time Is Motion. Investigación independiente de Mateo Moreira: la hipótesis del tiempo como movimiento, sus consecuencias abductivas y Datos Coherentes.">
+<style>
+  :root{ --bg:#1a1918; --ink:#eae7e2; --mid:#807d7a; --soft:#4d4b49; --accent:#d95436; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ background:var(--bg); color:var(--ink); font-family:Georgia, 'Times New Roman', serif; line-height:1.7; }
+  .mono{ font-family:'Courier New', monospace; }
+  main{ max-width:880px; margin:0 auto; padding:0 20px 80px; }
+  /* hero */
+  .tem-hero{ width:100%; aspect-ratio:16/9; margin-top:28px; }
+  .tem-hero canvas{ width:100%; height:100%; display:block; image-rendering:pixelated; image-rendering:crisp-edges; }
+  .hero-caption{ display:flex; justify-content:space-between; align-items:center; margin-top:10px; }
+  .hero-caption p{ font-size:13px; color:var(--mid); font-style:italic; }
+  .tem-lang{ display:flex; gap:8px; }
+  .tem-lang button{ font:11px/1 'Courier New', monospace; letter-spacing:.12em; padding:6px 13px; background:transparent; color:var(--mid); border:1px solid var(--soft); cursor:pointer; }
+  .tem-lang button.active{ color:var(--ink); border-color:var(--ink); }
+  /* header text */
+  header.site{ margin-top:52px; }
+  h1{ font-size:clamp(30px,5vw,44px); font-weight:normal; letter-spacing:.01em; }
+  h1 .eq{ color:var(--accent); }
+  .subtitle{ font-size:17px; color:var(--mid); margin-top:8px; }
+  .thesis{ margin-top:26px; font-size:19px; max-width:640px; }
+  /* sections */
+  section{ margin-top:72px; }
+  h2{ font:15px 'Courier New', monospace; letter-spacing:.28em; text-transform:uppercase; color:var(--mid); border-bottom:1px solid var(--soft); padding-bottom:10px; margin-bottom:26px; }
+  /* timeline */
+  .timeline{ font-family:'Courier New', monospace; font-size:14px; }
+  .timeline li{ list-style:none; display:flex; gap:18px; padding:9px 0; border-bottom:1px dashed #2b2a28; }
+  .timeline .yr{ color:var(--accent); min-width:52px; }
+  /* archive table */
+  table{ width:100%; border-collapse:collapse; font-size:14.5px; }
+  th{ font:12px 'Courier New', monospace; letter-spacing:.14em; text-transform:uppercase; color:var(--mid); text-align:left; padding:8px 10px 8px 0; border-bottom:1px solid var(--soft); }
+  td{ padding:12px 10px 12px 0; border-bottom:1px solid #2b2a28; vertical-align:top; }
+  a{ color:var(--accent); text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  .muted{ color:var(--mid); }
+  /* revisions */
+  .rev{ margin-bottom:28px; }
+  .rev h3{ font:14px 'Courier New', monospace; letter-spacing:.08em; color:var(--ink); margin-bottom:6px; }
+  .rev p{ font-size:15px; color:#c9c6c1; max-width:680px; }
+  .rev .lbl{ color:var(--accent); font-family:'Courier New', monospace; font-size:12px; letter-spacing:.1em; }
+  footer{ margin-top:90px; padding-top:24px; border-top:1px solid var(--soft); font-size:14px; color:var(--mid); }
+  footer a{ color:var(--mid); text-decoration:underline; }
+  @media (max-width:640px){ table, thead, tbody, tr{ display:block; } th{ display:none; } td{ display:block; border-bottom:none; padding:3px 0; } tr{ border-bottom:1px solid #2b2a28; padding:12px 0; } }
+</style>
+</head>
+<body>
+<main>
+
+  <div class="tem-hero"><canvas id="tem-canvas" width="384" height="216"
+    aria-label="Un niño salta de baldosa en baldosa diciendo tiempo, movimiento, cada vez más rápido, mientras el mundo pasa de gris a color."></canvas></div>
+  <div class="hero-caption">
+    <p>Un niño salta sobre las baldosas del mismo color. Cada salto, más rápido.</p>
+    <div class="tem-lang">
+      <button id="lang-es" class="active" type="button">ES</button>
+      <button id="lang-en" type="button">EN</button>
+    </div>
+  </div>
+
+  <header class="site">
+    <h1>T<span class="eq">≡</span>M Theory — Time Is Motion</h1>
+    <p class="subtitle">Investigación independiente · Mateo Moreira · Uruguay</p>
+    <p class="thesis">El tiempo no es un contenedor donde las cosas se mueven: el tiempo <em>es</em> el movimiento. Una hipótesis, sus consecuencias abductivas, y la ontología que la sostiene — publicadas en abierto, corregidas en público.</p>
+  </header>
+
+  <section id="timeline">
+    <h2>Línea de tiempo</h2>
+    <ul class="timeline">
+      <li><span class="yr">2018</span><span>Primer email — la intuición del Tempo</span></li>
+      <li><span class="yr">2025</span><span>T≡M v1.0 — la hipótesis publicada · Tempo Symbol Identity — el símbolo</span></li>
+      <li><span class="yr">2026</span><span>v2.0 → v2.1 — del residuo constante al drift diferencial (ε_R)</span></li>
+      <li><span class="yr">2026</span><span>Companion Paper — consecuencias abductivas de la unificación en Tempo</span></li>
+      <li><span class="yr">2026</span><span>Datos Coherentes — solo lo coherente existe</span></li>
+      <li><span class="yr">…</span><span class="muted">Trabajo futuro</span></li>
+    </ul>
+  </section>
+
+  <section id="archive">
+    <h2>Research Archive</h2>
+    <table>
+      <thead><tr><th>Documento</th><th>Versión</th><th>Fecha</th><th>DOI</th></tr></thead>
+      <tbody>
+        <tr><td>T≡M Theory — Time Is Motion</td><td>v1.0</td><td>Nov 2025</td><td><a href="https://doi.org/10.5281/zenodo.17514234">10.5281/zenodo.17514234</a></td></tr>
+        <tr><td>T≡M Theory — Cosmological Expansion as the Root Tick</td><td>v2.0</td><td>Mar 2026</td><td><a href="https://doi.org/10.5281/zenodo.18856653">10.5281/zenodo.18856653</a></td></tr>
+        <tr><td>T≡M Theory — Cosmological Expansion as the Root Tick</td><td>v2.1</td><td>Jun 2026</td><td><a href="https://doi.org/10.5281/zenodo.20779567">10.5281/zenodo.20779567</a></td></tr>
+        <tr><td>Companion — Consecuencias Abductivas de la Unificación en Tempo</td><td>v1.0</td><td>May 2026</td><td><a href="https://doi.org/10.5281/zenodo.20349781">10.5281/zenodo.20349781</a></td></tr>
+        <tr><td>Companion — Abductive Consequences of the Tempo Unification</td><td>v1.1</td><td>Jul 2026</td><td><a href="https://doi.org/10.5281/zenodo.21208371">10.5281/zenodo.21208371</a></td></tr>
+        <tr><td>Coherent Data — Only the Coherent Exists</td><td>v1.0</td><td>Jul 2026</td><td><a href="https://doi.org/10.5281/zenodo.21230276">10.5281/zenodo.21230276</a></td></tr>
+        <tr><td>Tempo Symbol Identity (diseño del símbolo)</td><td>v1.0</td><td>Nov 2025</td><td><a href="https://doi.org/10.5281/zenodo.17545235">10.5281/zenodo.17545235</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="revisions">
+    <h2>Reviews &amp; Revisions</h2>
+    <div class="rev">
+      <h3>v2.0 → v2.1</h3>
+      <p><span class="lbl">PROBLEMA</span> — El residuo constante (α_R) no era observable: un corrimiento universal idéntico en todos los relojes es indistinguible de una redefinición de unidades.</p>
+      <p><span class="lbl">RESOLUCIÓN</span> — La v2.1 introduce el drift diferencial (ε_R): diferencias entre tipos de reloj según su estructura de coherencia, una firma en principio medible, con cota |Δε_R| ≲ 10⁻⁸.</p>
+    </div>
+    <p class="muted" style="font-size:14px;">Historial completo en el <a href="https://github.com/mateomoreira-uy/time-is-motion/blob/main/CHANGELOG.md">CHANGELOG</a> del repositorio.</p>
+  </section>
+
+  <footer>
+    <p>Mateo Moreira · <a href="mailto:mateomoreira@gmail.com">mateomoreira@gmail.com</a> ·
+    <a href="https://orcid.org/0009-0001-8318-4962">ORCID</a> ·
+    <a href="https://github.com/mateomoreira-uy/time-is-motion">GitHub</a> ·
+    <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Moreira%2C%20Mateo%22">Zenodo</a> ·
+    <a href="https://medium.com/@mateomoreira_83879">Medium</a></p>
+    <p style="margin-top:8px;">Documentos: CC BY 4.0 · Símbolo: CC BY-NC 4.0 · Código: MIT</p>
+  </footer>
+
+</main>
+<script>
+
+/* ============================================================
+   T≡M — pixel hop animation (standalone, no dependencies)
+   Vanilla canvas version of the Claude Design scene.
+   - Bilingual: setLang('es' | 'en'), or ?lang=en in the URL
+   - 20 s loop · 384×216 internal pixels · palette evolves
+     gray → blue → color, like the expansion
+   - Respects prefers-reduced-motion (static final frame)
+   ============================================================ */
+(function () {
+  'use strict';
+
+  const W = 384, H = 216;
+  const DURATION = 20, T_END = 17.4;
+
+  const canvas = document.getElementById('tem-canvas');
+  const ctx = canvas.getContext('2d');
+
+  // ---------- language ----------
+  const WORDS = {
+    es: { even: 'TIEMPO', odd: 'MOVIMIENTO', final: 'TEMPO' },
+    en: { even: 'TIME',   odd: 'MOTION',     final: 'TEMPO' },
+  };
+  let lang = /[?&]lang=en/.test(location.search) ? 'en' : 'es';
+
+  // ---------- palettes ----------
+  const GRAY = ['#211f1e', '#4d4b49', '#807d7a', '#b5b2ae', '#eae7e2'];
+  function grayRoles(accent) {
+    const r = GRAY;
+    return {
+      ramp: r, sky: r[4],
+      wallA: r[3], wallB: r[2], roof: r[1], window: r[4], door: r[1],
+      cloud: '#f5f3ef', bush: r[2],
+      walls: [r[3], '#c4c1bc', r[2], '#a5a29d', r[3], '#8d8a86'],
+      tileL: r[3], tileD: r[1], line: r[2], street: r[1],
+      dark: r[0], skin: r[3], skin2: r[2], hair: r[0],
+      shirt: accent || r[2], shorts: r[1], shoe: r[4],
+      word: accent || r[0],
+    };
+  }
+  const COLOR = {
+    ramp: ['#2b2119', '#6b6f75', '#8f8678', '#cfc7b8', '#f4f1e8'],
+    sky: '#9ecbe8',
+    wallA: '#c99a5e', wallB: '#b5854e', roof: '#8a4f3d', window: '#eef6fb', door: '#6e4630',
+    cloud: '#eef6fb', bush: '#5a8a4a',
+    walls: ['#e9e5da', '#e3c98f', '#c47a5a', '#aabfd1', '#b5854e', '#a9b78f'],
+    tileL: '#cfc7b8', tileD: '#8f8678', line: '#6e665c', street: '#565a5f',
+    dark: '#2b2119', skin: '#e8b48a', skin2: '#c98f63', hair: '#3d2b1f',
+    shirt: '#3f6fb5', shorts: '#3d5a4a', shoe: '#f2efe8',
+    word: '#d95436',
+  };
+  const P_GRIS = grayRoles(null);
+  const P_AZUL = grayRoles('#5b83ae');
+
+  // gris → azul → color, like the expansion
+  function lerpHex(a, b, f) {
+    const pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16);
+    const ch = (sh) => Math.round(((pa >> sh) & 255) + (((pb >> sh) & 255) - ((pa >> sh) & 255)) * f);
+    return '#' + ((1 << 24) | (ch(16) << 16) | (ch(8) << 8) | ch(0)).toString(16).slice(1);
+  }
+  function mixRoles(A, B, f) {
+    const out = {};
+    for (const k in A) out[k] = Array.isArray(A[k]) ? A[k].map((c, i) => lerpHex(c, B[k][i], f)) : lerpHex(A[k], B[k], f);
+    return out;
+  }
+  const smooth = (t) => t * t * (3 - 2 * t);
+  function paletteAt(time) {
+    if (time < 3) return P_GRIS;
+    if (time < 6.5) return mixRoles(P_GRIS, P_AZUL, smooth((time - 3) / 3.5));
+    if (time < 9.5) return P_AZUL;
+    if (time < 13.5) return mixRoles(P_AZUL, COLOR, smooth((time - 9.5) / 4));
+    return COLOR;
+  }
+
+  // ---------- hop schedule: exponential acceleration ----------
+  function makeHops() {
+    const hops = [];
+    let t = 0, d = 1.8, n = 0;
+    while (t < T_END) { hops.push({ t0: t, dur: d, n }); t += d; d = Math.max(0.10, d * 0.90); n++; }
+    while (t < 20.5) { hops.push({ t0: t, dur: 0.10, n }); t += 0.10; n++; }
+    return hops;
+  }
+  const HOPS = makeHops();
+
+  function hopState(time) {
+    let h = HOPS[HOPS.length - 1];
+    for (let i = 0; i < HOPS.length; i++) { if (time < HOPS[i].t0 + HOPS[i].dur) { h = HOPS[i]; break; } }
+    const p = Math.min(1, Math.max(0, (time - h.t0) / h.dur));
+    const C = 0.32;
+    const air = p > C ? (p - C) / (1 - C) : 0;
+    const crouch = p <= C ? Math.sin(Math.PI * (p / C)) : 0;
+    return { n: h.n, p, air, crouch, dur: h.dur, dist: h.n + air, t0: h.t0 };
+  }
+
+  // ---------- tiny pixel font (caps) ----------
+  const FONT = {
+    T: ['###', '.#.', '.#.', '.#.', '.#.'],
+    I: ['###', '.#.', '.#.', '.#.', '###'],
+    E: ['###', '#..', '##.', '#..', '###'],
+    M: ['#...#', '##.##', '#.#.#', '#...#', '#...#'],
+    P: ['##.', '#.#', '##.', '#..', '#..'],
+    O: ['###', '#.#', '#.#', '#.#', '###'],
+    V: ['#.#', '#.#', '#.#', '#.#', '.#.'],
+    N: ['#..#', '##.#', '#.##', '#..#', '#..#'],
+    '≡': ['####', '....', '####', '....', '####'],
+  };
+  function textW(str, s) {
+    let w = 0;
+    for (const ch of str) { const g = FONT[ch]; if (g) w += g[0].length * s + s; }
+    return w - s;
+  }
+  function drawText(c2, str, cx, y, s, color, maxChars) {
+    const total = textW(str, s);
+    let x = Math.round(cx - total / 2);
+    c2.fillStyle = color;
+    let count = 0;
+    for (const ch of str) {
+      const g = FONT[ch]; if (!g) continue;
+      count++;
+      if (maxChars != null && count > maxChars) break;
+      for (let r = 0; r < 5; r++) for (let c = 0; c < g[r].length; c++) {
+        if (g[r][c] === '#') c2.fillRect(x + c * s, y + r * s, s, s);
+      }
+      x += g[0].length * s + s;
+    }
+  }
+  function drawTextOutlined(c2, str, cx, y, s, color, outline) {
+    for (const [ox, oy] of [[-1, 0], [1, 0], [0, -1], [0, 1], [-1, -1], [1, -1], [-1, 1], [1, 1]]) {
+      drawText(c2, str, cx + ox, y + oy, s, outline);
+    }
+    drawText(c2, str, cx, y, s, color);
+  }
+
+  const rect = (c2, x, y, w, h, c) => { c2.fillStyle = c; c2.fillRect(Math.round(x), Math.round(y), Math.round(w), Math.round(h)); };
+
+  // ---------- kid sprite (side view, facing right) ----------
+  function kidSide(c2, P, x, gy, st, foot) {
+    const near = foot === 1;
+    const legC = near ? P.skin : P.skin2;
+    const tuckC = near ? P.skin2 : P.skin;
+    const airborne = st.air > 0.05 && st.air < 0.97;
+    const cr = Math.round(st.crouch * 4);
+    const lean = st.crouch > 0.25 ? 2 : 0;
+    const lx = near ? 0 : -1;
+    if (!airborne) {
+      rect(c2, x - 2 + lx, gy - 3, 7, 3, P.shoe); rect(c2, x - 2 + lx, gy - 1, 7, 1, P.dark);
+      if (cr >= 3) { // knee flexion: shin + thigh forward
+        rect(c2, x + 1 + lx, gy - 8, 3, 5, legC);
+        rect(c2, x - 1 + lx, gy - 11 + cr, 6, 3, legC);
+      } else {
+        rect(c2, x + lx, gy - 11 + cr, 3, 8 - cr, legC);
+      }
+      rect(c2, x - 5 - lx, gy - 9 + cr, 3, 3, tuckC); rect(c2, x - 8 - lx, gy - 9 + cr, 4, 3, P.shoe); // tucked free leg
+    } else if (st.air < 0.55) { // rising: both legs tucked
+      rect(c2, x - 2, gy - 9, 3, 4, tuckC); rect(c2, x - 5, gy - 6, 5, 3, P.shoe);
+      rect(c2, x + 3, gy - 11, 3, 4, legC); rect(c2, x + 1, gy - 8, 5, 3, P.shoe);
+    } else { // descending: next leg reaches forward
+      rect(c2, x + 5, gy - 10, 3, 6, tuckC); rect(c2, x + 5, gy - 5, 6, 3, P.shoe);
+      rect(c2, x - 2, gy - 10, 3, 5, legC); rect(c2, x - 4, gy - 7, 4, 3, P.shoe);
+    }
+    const tx = x + lean;
+    const ty = gy - 25 + cr;
+    rect(c2, tx - 4, ty + 9, 10, 5, P.shorts);
+    rect(c2, tx - 5, ty, 12, 9, P.shirt);
+    if (airborne) { rect(c2, tx + 5, ty + 1, 2, 3, P.skin2); rect(c2, tx + 7, ty + 2, 3, 2, P.skin); }
+    else { rect(c2, tx + 4, ty + 3, 2, 3, P.skin2); rect(c2, tx + 2, ty + 5, 3, 2, P.skin); }
+    const hy = ty - 12;
+    rect(c2, tx - 3, hy + 3, 10, 9, P.skin);   // face
+    rect(c2, tx - 4, hy, 10, 1, P.hair);       // hair top
+    rect(c2, tx - 5, hy + 1, 12, 3, P.hair);
+    rect(c2, tx - 5, hy + 4, 2, 5, P.hair);    // hair back
+    rect(c2, tx - 3, hy + 4, 1, 2, P.hair);
+    rect(c2, tx - 2, hy + 6, 2, 3, P.skin2);   // ear
+    rect(c2, tx - 1, hy + 7, 1, 1, P.skin);
+    rect(c2, tx + 3, hy + 5, 1, 2, P.dark);    // eye
+    rect(c2, tx + 7, hy + 7, 1, 2, P.skin);    // nose
+    rect(c2, tx + 4, hy + 10, 2, 1, P.skin2);  // mouth
+    rect(c2, tx + 4, hy + 11, 2, 1, P.skin);
+  }
+
+  // ---------- spoken word ----------
+  function wordFor(n) { return n % 2 === 0 ? WORDS[lang].even : WORDS[lang].odd; }
+  function drawSpokenWord(c2, P, st, time, cx, y, s) {
+    if (time > T_END) return; // ending owns the screen
+    const el = time - st.t0;
+    const show = Math.min(1.1, st.dur * 1.05);
+    if (el > show) return;
+    const revealDur = Math.min(0.45, st.dur * 0.28);
+    const word = wordFor(st.n);
+    const chars = st.dur < 0.6 ? word.length : (revealDur > 0 ? Math.ceil((el / revealDur) * word.length) : word.length);
+    const rise = Math.round((el / show) * 4);
+    drawText(c2, word, cx, y - rise, s, P.word, chars);
+  }
+
+  // ---------- village row-houses ----------
+  const HOUSES = [
+    { w: 86, h: 80, g: 0 }, { w: 70, h: 100, g: 1 }, { w: 100, h: 70, g: 0 },
+    { w: 80, h: 90, g: 1 }, { w: 108, h: 106, g: 0 }, { w: 82, h: 80, g: 1 },
+  ];
+  const HTOT = HOUSES.reduce((a, h) => a + h.w, 0);
+
+  function drawHouse(c2, P, x, g, Hs, i) {
+    const wall = P.walls[i % P.walls.length];
+    rect(c2, x, g - Hs.h, Hs.w, Hs.h, wall);
+    rect(c2, x, g - Hs.h, 1, Hs.h, P.line); // party wall seam
+    if (Hs.g) { // stepped gable roof
+      const steps = 4, sw = Math.floor(Hs.w / 2 / steps);
+      for (let s2 = 0; s2 < steps; s2++) rect(c2, x + s2 * sw, g - Hs.h - (s2 + 1) * 4, Hs.w - 2 * s2 * sw, 4, P.roof);
+    } else {
+      rect(c2, x - 2, g - Hs.h - 4, Hs.w + 4, 4, P.roof); // flat parapet
+      if (i % 3 === 0) rect(c2, x + Hs.w - 18, g - Hs.h - 13, 8, 9, P.roof); // chimney
+    }
+    const dpos = i % 3;
+    const dx2 = dpos === 0 ? x + 8 : dpos === 1 ? x + Math.round(Hs.w / 2) - 6 : x + Hs.w - 20;
+    for (let wy = g - Hs.h + 8; wy < g - 32; wy += 22) {
+      for (let wx = x + 27; wx < x + Hs.w - 14; wx += 23) {
+        const nearDoor = wy + 15 > g - 32 && wx + 14 > dx2 - 4 && wx - 2 < dx2 + 16;
+        if (nearDoor) continue;
+        rect(c2, wx, wy, 12, 13, P.window);
+        rect(c2, wx + 5, wy, 2, 13, P.line);
+        rect(c2, wx, wy + 5, 12, 2, P.line);
+        rect(c2, wx - 2, wy + 13, 16, 2, P.roof);
+      }
+    }
+    rect(c2, dx2, g - 27, 12, 27, P.door);
+    rect(c2, dpos === 2 ? dx2 + 2 : dx2 + 9, g - 14, 2, 2, P.window); // knob
+    if (i % 3 === 1) rect(c2, dx2 - 2, g - 30, 16, 3, P.roof); // awning
+  }
+
+  // ---------- scene ----------
+  function drawScene(time) {
+    const P = paletteAt(time);
+    const st = hopState(time);
+    ctx.clearRect(0, 0, W, H);
+    const scroll = st.dist * 60; // 2 tiles of 30px per hop
+    rect(ctx, 0, 0, W, H, P.sky);
+    // clouds
+    const cs = scroll * 0.05;
+    rect(ctx, 60 - (cs % 450), 24, 40, 7, P.cloud); rect(ctx, 69 - (cs % 450), 19, 22, 5, P.cloud);
+    rect(ctx, 285 - (cs % 450), 42, 30, 6, P.cloud);
+    // village row houses (mild parallax)
+    const ws = scroll * 0.8;
+    const ground = 180;
+    let hx = -(ws % HTOT) - HTOT;
+    let hi = 0;
+    while (hx < W) {
+      const Hs = HOUSES[hi % HOUSES.length];
+      if (hx + Hs.w > -2) drawHouse(ctx, P, hx, ground, Hs, hi % HOUSES.length);
+      hx += Hs.w; hi++;
+    }
+    // bushes
+    for (let bx = -(ws % 140); bx < W; bx += 140) {
+      rect(ctx, bx, ground - 6, 10, 6, P.bush); rect(ctx, bx + 3, ground - 9, 4, 3, P.bush);
+    }
+    // sidewalk band
+    const tw = 30, top = 180, bot = 196;
+    const first = Math.floor(scroll / tw) - 1;
+    for (let j = first; j < first + 16; j++) {
+      const x = j * tw - scroll;
+      rect(ctx, x, top, tw, bot - top, j % 2 === 0 ? P.tileD : P.tileL);
+      rect(ctx, x, top, 1, bot - top, P.line);
+    }
+    rect(ctx, 0, top, W, 1, P.dark);
+    rect(ctx, 0, bot, W, 3, P.line); rect(ctx, 0, bot + 3, W, 20, P.street); // curb + street
+    const ss = scroll * 1.2;
+    for (let dxx = -(ss % 54); dxx < W; dxx += 54) rect(ctx, dxx, 207, 20, 3, P.tileL); // dashes
+    // lamppost
+    for (let lxp = 90 - (scroll % 240); lxp < W; lxp += 240) {
+      rect(ctx, lxp, top - 38, 3, 38, P.dark); rect(ctx, lxp - 2, top - 42, 7, 4, P.roof);
+    }
+    // kid — centered on dark tiles
+    const sx = 135;
+    const gyBase = top + 9;
+    const jumpH = Math.max(7, Math.min(19, st.dur * 13));
+    const jy = -Math.round(jumpH * 4 * st.air * (1 - st.air));
+    kidSide(ctx, P, sx, gyBase + jy, st, st.n % 2 === 0 ? 1 : -1);
+    drawSpokenWord(ctx, P, st, time, sx + 3, 30, 3);
+    // ending
+    if (time > T_END) {
+      const e = time - T_END;
+      if (e > 0.35) {
+        const p = Math.min(1, (e - 0.35) / 0.5);
+        const sc = Math.round(4 + p * 4);
+        drawTextOutlined(ctx, WORDS[lang].final, 192, 76 - sc * 2.5, sc, P.word, P.ramp[4]);
+      }
+    }
+  }
+
+  // ---------- loop ----------
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let start = null;
+  function frame(now) {
+    if (start === null) start = now;
+    const time = ((now - start) / 1000) % DURATION;
+    drawScene(time);
+    requestAnimationFrame(frame);
+  }
+  if (reduced) {
+    drawScene(19.2); // static final frame: full color + TEMPO
+  } else {
+    requestAnimationFrame(frame);
+  }
+
+  // ---------- language toggle ----------
+  const bES = document.getElementById('lang-es');
+  const bEN = document.getElementById('lang-en');
+  function setLang(l) {
+    lang = l;
+    bES.classList.toggle('active', l === 'es');
+    bEN.classList.toggle('active', l === 'en');
+    document.documentElement.lang = l;
+    if (reduced) drawScene(19.2);
+  }
+  if (bES && bEN) {
+    bES.addEventListener('click', () => setLang('es'));
+    bEN.addEventListener('click', () => setLang('en'));
+  }
+  window.temSetLang = setLang; // hook for the site's own language toggle
+})();
+
+</script>
+</body>
+</html>
