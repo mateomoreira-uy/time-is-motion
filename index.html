@@ -24,11 +24,22 @@
   html{ scroll-behavior:smooth; }
   section, header.site{ scroll-margin-top:64px; }
   /* topbar: nav + language toggle */
-  .topbar{ position:fixed; top:0; left:0; right:0; z-index:10; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 16px; background:rgba(26,25,24,.94); border-bottom:1px solid #2b2a28; }
+  .topbar{ position:fixed; top:0; left:0; right:0; z-index:10; background:rgba(26,25,24,.94); border-bottom:1px solid #2b2a28; }
+  .topbar-in{ max-width:880px; margin:0 auto; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
   .topbar nav{ display:flex; gap:16px; overflow-x:auto; white-space:nowrap; scrollbar-width:none; }
+  .topbar nav.fade-r{ -webkit-mask-image:linear-gradient(90deg,#000 86%,transparent); mask-image:linear-gradient(90deg,#000 86%,transparent); }
+  .topbar nav.fade-l{ -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%); mask-image:linear-gradient(90deg,transparent,#000 14%); }
+  .topbar nav.fade-l.fade-r{ -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent); mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent); }
   .topbar nav::-webkit-scrollbar{ display:none; }
-  .topbar nav a{ font:12px/1 'Courier New', monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--mid); text-decoration:none; padding:6px 0; }
+  .topbar nav a{ font:12px/1 'Courier New', monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--mid); text-decoration:none; padding:6px 0; border-bottom:1px solid transparent; }
   .topbar nav a:hover{ color:var(--ink); text-decoration:none; }
+  .topbar nav a.active{ color:var(--ink); border-bottom-color:var(--accent); }
+  @media (max-width:640px){
+    .topbar-in{ padding:10px 14px; }
+    .topbar nav{ gap:11px; }
+    .topbar nav a{ font-size:11px; letter-spacing:.07em; }
+    .tem-lang button{ padding:5px 9px; }
+  }
   .tem-lang{ display:flex; gap:6px; flex-shrink:0; }
   .tem-lang button{ font:11px/1 'Courier New', monospace; letter-spacing:.12em; padding:6px 12px; background:transparent; color:var(--mid); border:1px solid var(--soft); cursor:pointer; }
   .tem-lang button.active{ color:var(--ink); border-color:var(--ink); }
@@ -67,6 +78,7 @@
 <body>
 
 <div class="topbar">
+<div class="topbar-in">
   <nav>
     <a href="#top" data-i18n="nav_home">Home</a>
     <a href="#archive" data-i18n="nav_archive">Archive</a>
@@ -78,6 +90,7 @@
     <button id="lang-en" class="active" type="button">EN</button>
     <button id="lang-es" type="button">ES</button>
   </div>
+</div>
 </div>
 
 <main id="top">
@@ -559,6 +572,17 @@
       lic: 'Documentos: CC BY 4.0 \u00b7 S\u00edmbolo: CC BY-NC 4.0 \u00b7 C\u00f3digo: MIT'
     }
   };
+  /* fades del nav: solo cuando hay contenido oculto hacia ese lado */
+  var navEl = document.querySelector('.topbar nav');
+  function updateNavFades(){
+    var max = navEl.scrollWidth - navEl.clientWidth;
+    navEl.classList.toggle('fade-r', max > 2 && navEl.scrollLeft < max - 2);
+    navEl.classList.toggle('fade-l', max > 2 && navEl.scrollLeft > 2);
+  }
+  navEl.addEventListener('scroll', updateNavFades, { passive: true });
+  window.addEventListener('resize', updateNavFades);
+  updateNavFades();
+
   var current = 'en';
   try {
     var saved = localStorage.getItem('tem-lang');
@@ -580,6 +604,7 @@
       a.setAttribute('href', a.getAttribute('data-base') + '-' + lang + '.pdf');
     });
     if (window.temSetLang) window.temSetLang(lang);
+    requestAnimationFrame(updateNavFades);
     try { localStorage.setItem('tem-lang', lang); } catch(e){}
   }
   /* the animation script already wires lang buttons for itself;
@@ -587,6 +612,33 @@
   document.getElementById('lang-en').addEventListener('click', function(){ apply('en'); });
   document.getElementById('lang-es').addEventListener('click', function(){ apply('es'); });
   if (current !== 'en') apply(current);
+
+  /* scrollspy: resalta en el menu la seccion visible */
+  var spy = [
+    { id: 'top',        sel: '[href="#top"]' },
+    { id: 'archive',    sel: '[href="#archive"]' },
+    { id: 'revisions',  sel: '[href="#revisions"]' },
+    { id: 'philosophy', sel: '[href="#philosophy"]' },
+    { id: 'about',      sel: '[href="#about"]' }
+  ];
+  var links = spy.map(function(s){ return document.querySelector('.topbar nav ' + s.sel); });
+  var ticking = false;
+  function updateSpy(){
+    ticking = false;
+    var mark = window.scrollY + window.innerHeight * 0.35;
+    var active = 0;
+    for (var i = 0; i < spy.length; i++){
+      var el = document.getElementById(spy[i].id);
+      if (el && el.offsetTop <= mark) active = i;
+    }
+    /* al llegar al final, activa la ultima seccion */
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) active = spy.length - 1;
+    links.forEach(function(a, i){ if (a) a.classList.toggle('active', i === active); });
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){ ticking = true; requestAnimationFrame(updateSpy); }
+  }, { passive: true });
+  updateSpy();
 })();
 </script>
 </body>
