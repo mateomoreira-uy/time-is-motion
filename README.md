@@ -28,7 +28,7 @@ sede del sitio web del proyecto.
 | Coherent Data — Only the Coherent Exists: An Informational Ontology of the Universe | v1.0 | Jul 2026 | [10.5281/zenodo.21230276](https://doi.org/10.5281/zenodo.21230276) | [EN](papers/coherent-data/coherent-data-v1.0-en.pdf) · [ES](papers/coherent-data/coherent-data-v1.0-es.pdf) |
 | Tempo Symbol Identity — T≡M Theory — Time Is Motion (pack de diseño del símbolo) | v1.0 | Nov 2025 | [10.5281/zenodo.17545235](https://doi.org/10.5281/zenodo.17545235) | — |
 
-## Línea de tiempo
+## Línea de Tempo
 
 ```
 2018 · Primer email: la intuición del Tempo
