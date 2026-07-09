@@ -70,4 +70,5 @@ EN/ES, con la animación T≡M en canvas (sin dependencias, 15KB).
 
 Mateo Moreira · mateomoreira@gmail.com · Uruguay
 ORCID: [0009-0001-8318-4962](https://orcid.org/0009-0001-8318-4962)
+LinkedIn: [LinkedIn](https://www.linkedin.com/in/mateo-moreira)
 Artículos de divulgación: [Medium](https://medium.com/@mateomoreira_83879)
