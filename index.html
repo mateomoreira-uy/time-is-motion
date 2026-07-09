@@ -4,11 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>T≡M Theory — Time Is Motion · Mateo Moreira</title>
-<meta name="description" content="T≡M Theory — Time Is Motion. Independent research by Mateo Moreira: time and motion as the same principle, its abductive consequences, and Coherent Data.">
+<meta name="description" content="T≡M Theory — Time Is Motion. Research on the foundations of time and coherent data. Independent research by Mateo Moreira, Uruguay.">
 <meta property="og:title" content="T≡M Theory — Time Is Motion">
 <meta property="og:description" content="Time is not a container in which things move: time is motion. Independent research by Mateo Moreira.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mateomoreira-uy.github.io/time-is-motion/">
+<meta property="og:image" content="https://mateomoreira-uy.github.io/time-is-motion/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mateomoreira-uy.github.io/time-is-motion/assets/og-image.png">
 <link rel="icon" type="image/svg+xml" href="assets/symbol/tempo_symbol_wb.svg">
 <link rel="icon" type="image/png" href="assets/symbol/tempo_symbol_wb.png">
 <style>
@@ -16,17 +21,25 @@
   *{ margin:0; padding:0; box-sizing:border-box; }
   body{ background:var(--bg); color:var(--ink); font-family:Georgia, 'Times New Roman', serif; line-height:1.7; }
   main{ max-width:880px; margin:0 auto; padding:0 20px 80px; }
-  /* language toggle, fixed top right */
-  .tem-lang{ position:fixed; top:14px; right:16px; display:flex; gap:6px; z-index:10; }
-  .tem-lang button{ font:11px/1 'Courier New', monospace; letter-spacing:.12em; padding:6px 12px; background:var(--bg); color:var(--mid); border:1px solid var(--soft); cursor:pointer; }
+  html{ scroll-behavior:smooth; }
+  section, header.site{ scroll-margin-top:64px; }
+  /* topbar: nav + language toggle */
+  .topbar{ position:fixed; top:0; left:0; right:0; z-index:10; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:10px 16px; background:rgba(26,25,24,.94); border-bottom:1px solid #2b2a28; }
+  .topbar nav{ display:flex; gap:16px; overflow-x:auto; white-space:nowrap; scrollbar-width:none; }
+  .topbar nav::-webkit-scrollbar{ display:none; }
+  .topbar nav a{ font:12px/1 'Courier New', monospace; letter-spacing:.12em; text-transform:uppercase; color:var(--mid); text-decoration:none; padding:6px 0; }
+  .topbar nav a:hover{ color:var(--ink); text-decoration:none; }
+  .tem-lang{ display:flex; gap:6px; flex-shrink:0; }
+  .tem-lang button{ font:11px/1 'Courier New', monospace; letter-spacing:.12em; padding:6px 12px; background:transparent; color:var(--mid); border:1px solid var(--soft); cursor:pointer; }
   .tem-lang button.active{ color:var(--ink); border-color:var(--ink); }
   /* hero */
-  .tem-hero{ width:100%; aspect-ratio:16/9; margin-top:28px; }
+  .tem-hero{ width:100%; aspect-ratio:16/9; margin-top:72px; }
   .tem-hero canvas{ width:100%; height:100%; display:block; image-rendering:pixelated; image-rendering:crisp-edges; }
   header.site{ margin-top:52px; }
   h1{ font-size:clamp(30px,5vw,44px); font-weight:normal; letter-spacing:.01em; }
   h1 .eq{ color:var(--accent); }
   .subtitle{ font-size:17px; color:var(--mid); margin-top:8px; }
+  .tagline{ font-size:15px; color:var(--mid); margin-top:4px; font-style:italic; }
   .thesis{ margin-top:26px; font-size:19px; max-width:640px; }
   section{ margin-top:72px; }
   h2{ font:15px 'Courier New', monospace; letter-spacing:.28em; text-transform:uppercase; color:var(--mid); border-bottom:1px solid var(--soft); padding-bottom:10px; margin-bottom:26px; }
@@ -42,6 +55,8 @@
   .rev h3{ font:14px 'Courier New', monospace; letter-spacing:.08em; margin-bottom:6px; }
   .rev p{ font-size:15px; color:#c9c6c1; max-width:680px; }
   .rev .lbl{ color:var(--accent); font-family:'Courier New', monospace; font-size:12px; letter-spacing:.1em; }
+  .philosophy li{ list-style:none; padding:8px 0 8px 22px; position:relative; font-size:16px; max-width:680px; border-bottom:1px dashed #2b2a28; }
+  .philosophy li::before{ content:'≡'; position:absolute; left:0; color:var(--accent); font-family:'Courier New', monospace; }
   pre.bibtex{ font:13px/1.6 'Courier New', monospace; color:#c9c6c1; background:#211f1e; border:1px solid var(--soft); padding:18px; overflow-x:auto; white-space:pre; }
   .about p{ font-size:16.5px; max-width:680px; margin-bottom:14px; }
   footer{ margin-top:90px; padding-top:24px; border-top:1px solid var(--soft); font-size:14px; color:var(--mid); }
@@ -51,12 +66,21 @@
 </head>
 <body>
 
-<div class="tem-lang">
-  <button id="lang-en" class="active" type="button">EN</button>
-  <button id="lang-es" type="button">ES</button>
+<div class="topbar">
+  <nav>
+    <a href="#top" data-i18n="nav_home">Home</a>
+    <a href="#archive" data-i18n="nav_archive">Archive</a>
+    <a href="#revisions" data-i18n="nav_rev">Revisions</a>
+    <a href="#philosophy" data-i18n="nav_phil">Philosophy</a>
+    <a href="#about" data-i18n="nav_about">About</a>
+  </nav>
+  <div class="tem-lang">
+    <button id="lang-en" class="active" type="button">EN</button>
+    <button id="lang-es" type="button">ES</button>
+  </div>
 </div>
 
-<main>
+<main id="top">
 
   <div class="tem-hero"><canvas id="tem-canvas" width="384" height="216"
     aria-label="A kid hops tile to tile saying time, motion, faster and faster, while the world turns from gray to color. / Un niño salta de baldosa en baldosa diciendo tiempo, movimiento, cada vez más rápido, mientras el mundo pasa de gris a color."></canvas></div>
@@ -64,6 +88,7 @@
   <header class="site">
     <h1>T<span class="eq">≡</span>M Theory — Time Is Motion</h1>
     <p class="subtitle" data-i18n="subtitle">Independent research · Mateo Moreira · Uruguay</p>
+    <p class="tagline" data-i18n="tagline">Research on the foundations of time and coherent data</p>
     <p class="thesis" data-i18n="thesis">Time is not a container in which things move: time <em>is</em> motion. One hypothesis, its abductive consequences, and the ontology beneath it.</p>
   </header>
 
@@ -103,6 +128,17 @@
       <p><span class="lbl" data-i18n="lbl_res">RESOLUTION —</span> <span data-i18n="rev_res">v2.1 introduces the differential drift (ε_R): differences between clock types according to their coherence structure — a signature measurable in principle, with bound |Δε_R| ≲ 10⁻⁸.</span></p>
     </div>
     <p class="muted" style="font-size:14px;"><span data-i18n="rev_full">Full history in the repository</span> <a href="https://github.com/mateomoreira-uy/time-is-motion/blob/main/CHANGELOG.md">CHANGELOG</a>.</p>
+  </section>
+
+  <section id="philosophy" class="philosophy">
+    <h2 data-i18n="h_phil">Research Philosophy</h2>
+    <ul>
+      <li data-i18n="ph_1">Independent researcher.</li>
+      <li data-i18n="ph_2">Conceptual clarity before mathematical complexity.</li>
+      <li data-i18n="ph_3">Hypotheses are revised whenever inconsistencies are identified.</li>
+      <li data-i18n="ph_4">Speculative sections are explicitly labeled.</li>
+      <li data-i18n="ph_5">Every version remains publicly archived with a DOI.</li>
+    </ul>
   </section>
 
   <section id="cite">
@@ -478,6 +514,14 @@
       rev_issue: 'The constant residual (\u03b1_R) was not observable: a universal shift identical across all clocks is indistinguishable from a redefinition of units.',
       rev_res: 'v2.1 introduces the differential drift (\u03b5_R): differences between clock types according to their coherence structure \u2014 a signature measurable in principle, with bound |\u0394\u03b5_R| \u2272 10\u207b\u2078.',
       rev_full: 'Full history in the repository',
+      h_phil: 'Research Philosophy',
+      ph_1: 'Independent researcher.',
+      ph_2: 'Conceptual clarity before mathematical complexity.',
+      ph_3: 'Hypotheses are revised whenever inconsistencies are identified.',
+      ph_4: 'Speculative sections are explicitly labeled.',
+      ph_5: 'Every version remains publicly archived with a DOI.',
+      tagline: 'Research on the foundations of time and coherent data',
+      nav_home: 'Home', nav_archive: 'Archive', nav_rev: 'Revisions', nav_phil: 'Philosophy', nav_about: 'About',
       h_cite: 'How to cite',
       h_about: 'About',
       about_1: 'I am Mateo Moreira, an independent researcher from Uruguay. T\u2261M did not begin as a paper: it began as a childhood memory \u2014 hopping across the same-colored tiles of a sidewalk \u2014 and became words for the first time in an email written in 2018.',
@@ -500,6 +544,14 @@
       rev_issue: 'El residuo constante (\u03b1_R) no era observable: un corrimiento universal id\u00e9ntico en todos los relojes es indistinguible de una redefinici\u00f3n de unidades.',
       rev_res: 'La v2.1 introduce el drift diferencial (\u03b5_R): diferencias entre tipos de reloj seg\u00fan su estructura de coherencia, una firma en principio medible, con cota |\u0394\u03b5_R| \u2272 10\u207b\u2078.',
       rev_full: 'Historial completo en el',
+      h_phil: 'M\u00e9todo',
+      ph_1: 'Investigador independiente.',
+      ph_2: 'Claridad conceptual antes que complejidad matem\u00e1tica.',
+      ph_3: 'Las hip\u00f3tesis se revisan cuando se identifican inconsistencias.',
+      ph_4: 'Las secciones especulativas se se\u00f1alan expl\u00edcitamente.',
+      ph_5: 'Todas las versiones quedan archivadas p\u00fablicamente con DOI.',
+      tagline: 'Investigaci\u00f3n sobre los fundamentos del tiempo y los datos coherentes',
+      nav_home: 'Inicio', nav_archive: 'Archivo', nav_rev: 'Revisiones', nav_phil: 'M\u00e9todo', nav_about: 'Autor',
       h_cite: 'C\u00f3mo citar',
       h_about: 'Sobre el autor',
       about_1: 'Soy Mateo Moreira, investigador independiente de Uruguay. T\u2261M no empez\u00f3 como un paper: empez\u00f3 como un recuerdo de infancia, saltando sobre las baldosas del mismo color de una vereda, y se volvi\u00f3 palabras por primera vez en un email escrito en 2018.',
