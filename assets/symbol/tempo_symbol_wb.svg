@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <title>Tempo Symbol</title>
+  <desc>Square-balanced hourglass symbol with sharp corners and exact proportions.</desc>
+  <rect width="100%" height="100%" fill="#000000"/>
+  <g stroke="#FFFFFF" stroke-width="24" fill="none" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10">
+    <path d="M227.849782 212.000000 L772.150218 212.000000 L500.000000 500.000000 L772.150218 788.000000 L227.849782 788.000000 L500.000000 500.000000 Z" />
+    <line x1="200.000000" y1="500.000000" x2="800.000000" y2="500.000000" />
+  </g>
+</svg>
