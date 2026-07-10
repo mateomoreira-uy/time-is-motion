@@ -2,7 +2,7 @@
 
 **Investigación independiente / Independent research · Mateo Moreira (Uruguay)**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17514233.svg)](https://doi.org/10.5281/zenodo.17514233)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17514233-1682D4)](https://doi.org/10.5281/zenodo.17514233)
 [![Site](https://img.shields.io/badge/site-time--is--motion-d95436)](https://mateomoreira-uy.github.io/time-is-motion/)
 [![License: CC BY 4.0](https://img.shields.io/badge/papers-CC%20BY%204.0-807d7a)](LICENSE-papers.md)
 
