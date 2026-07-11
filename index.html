@@ -71,6 +71,15 @@
   .philosophy li::before{ content:'≡'; position:absolute; left:0; color:var(--accent); font-family:'Courier New', monospace; }
   pre.bibtex{ font:13px/1.6 'Courier New', monospace; color:#c9c6c1; background:#211f1e; border:1px solid var(--soft); padding:18px; overflow-x:auto; white-space:pre; }
   .about p{ font-size:16.5px; max-width:680px; margin-bottom:14px; }
+  .diagram{ margin:34px 0 10px; }
+  .diagram + .diagram{ border-top:1px dashed #2b2a28; padding-top:34px; margin-top:40px; }
+  .diagram svg{ width:100%; height:auto; display:block; }
+  .diagram .cap{ font:12px 'Courier New', monospace; letter-spacing:.08em; color:var(--mid); margin-top:10px; }
+  .dg-ink{ stroke:#eae7e2; } .dg-mid{ stroke:#807d7a; } .dg-soft{ stroke:#4d4b49; } .dg-acc{ stroke:#d95436; }
+  .dg-tink{ fill:#eae7e2; } .dg-tmid{ fill:#807d7a; } .dg-tacc{ fill:#d95436; }
+  .dg-lbl{ font:11px 'Courier New', monospace; letter-spacing:.06em; }
+  .seal{ display:flex; justify-content:center; margin-top:80px; }
+  .seal svg{ width:44px; height:44px; opacity:.85; }
   footer{ margin-top:90px; padding-top:24px; border-top:1px solid var(--soft); font-size:14px; color:var(--mid); }
   footer a{ color:var(--mid); text-decoration:underline; }
   @media (max-width:640px){ table, thead, tbody, tr{ display:block; } th{ display:none; } td{ display:block; border-bottom:none; padding:3px 0; } tr{ border-bottom:1px solid #2b2a28; padding:12px 0; } }
@@ -220,6 +229,96 @@
     <p class="thesis" data-i18n="thesis">Time is not a container in which things move: time <em>is</em> motion. One hypothesis, its abductive consequences, and the ontology beneath it.</p>
   </header>
 
+
+  <section id="visual">
+    <h2 data-i18n="h_visual">The theory at a glance</h2>
+
+    <div class="diagram">
+      <svg viewBox="0 0 700 380" role="img" aria-label="Root tick and nested motions">
+        <!-- nucleo: el root tick -->
+        <circle cx="230" cy="190" r="48" fill="none" class="dg-acc" stroke-width="2"/>
+        <g class="dg-acc" stroke-width="2">
+          <line x1="278.0" y1="190.0" x2="287.0" y2="190.0"/>
+          <line x1="263.9" y1="156.1" x2="270.3" y2="149.7"/>
+          <line x1="230.0" y1="142.0" x2="230.0" y2="133.0"/>
+          <line x1="196.1" y1="156.1" x2="189.7" y2="149.7"/>
+          <line x1="182.0" y1="190.0" x2="173.0" y2="190.0"/>
+          <line x1="196.1" y1="223.9" x2="189.7" y2="230.3"/>
+          <line x1="230.0" y1="238.0" x2="230.0" y2="247.0"/>
+          <line x1="263.9" y1="223.9" x2="270.3" y2="230.3"/>
+        </g>
+        <text x="230" y="197" text-anchor="middle" class="dg-tacc" font-size="20" font-family="Courier New, monospace">≡</text>
+        <!-- capas anidadas, hacia afuera -->
+        <circle cx="230" cy="190" r="86"  fill="none" class="dg-mid" stroke-width="1.4"/>
+        <circle cx="230" cy="190" r="122" fill="none" class="dg-mid" stroke-width="1.2"/>
+        <circle cx="230" cy="190" r="158" fill="none" class="dg-soft" stroke-width="1.2"/>
+        <!-- guias -->
+        <g class="dg-soft" stroke-width="1" stroke-dasharray="2 4">
+          <line x1="343" y1="80"  x2="392" y2="80"/>
+          <line x1="332" y1="123" x2="392" y2="123"/>
+          <line x1="312" y1="163" x2="392" y2="163"/>
+          <line x1="276" y1="203" x2="392" y2="203"/>
+        </g>
+        <!-- etiquetas -->
+        <text x="400" y="84"  class="dg-lbl dg-tink" data-i18n="dgA_4">atomic oscillations · clocks</text>
+        <text x="400" y="127" class="dg-lbl dg-tink" data-i18n="dgA_3">planetary orbits</text>
+        <text x="400" y="167" class="dg-lbl dg-tink" data-i18n="dgA_2">galactic rotation</text>
+        <text x="400" y="207" class="dg-lbl dg-tacc" data-i18n="dgA_1">cosmological expansion · the root tick</text>
+        <text x="400" y="262" class="dg-lbl dg-tmid" data-i18n="dgA_5">every motion is a tempo;</text>
+        <text x="400" y="280" class="dg-lbl dg-tmid" data-i18n="dgA_6">every tempo nests in the root tick</text>
+      </svg>
+      <p class="cap" data-i18n="dgA_cap">T≡M · time is motion: the expansion is the root tick</p>
+    </div>
+
+    <div class="diagram">
+      <svg viewBox="0 0 700 190" role="img" aria-label="Field, data, structure, closed dynamics, Tempo">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M1 1L8 5L1 9" fill="none" stroke="#4d4b49" stroke-width="1.4"/>
+          </marker>
+          <marker id="arr2" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M1 1L8 5L1 9" fill="none" stroke="#eae7e2" stroke-width="1.6"/>
+          </marker>
+        </defs>
+        <!-- campo (centro x=62) -->
+        <g class="dg-mid" fill="none" stroke-width="1.4">
+          <path d="M34 66 q 14 -14 28 0 t 28 0"/>
+          <path d="M34 82 q 14 -14 28 0 t 28 0"/>
+          <path d="M34 98 q 14 -14 28 0 t 28 0"/>
+        </g>
+        <!-- dato (x=201) -->
+        <circle cx="201" cy="82" r="6" fill="#eae7e2"/>
+        <circle cx="201" cy="82" r="14" fill="none" class="dg-mid" stroke-width="1.2"/>
+        <!-- estructura (x=340) -->
+        <g class="dg-mid" stroke-width="1.2">
+          <line x1="340" y1="60" x2="366" y2="102"/><line x1="366" y1="102" x2="314" y2="102"/><line x1="314" y1="102" x2="340" y2="60"/>
+        </g>
+        <circle cx="340" cy="60" r="5" fill="#eae7e2"/><circle cx="366" cy="102" r="5" fill="#eae7e2"/><circle cx="314" cy="102" r="5" fill="#eae7e2"/>
+        <!-- dinamica cerrada (x=479) -->
+        <path d="M468.9 60.3 A 24 24 0 1 1 457.2 71.9" fill="none" class="dg-ink" stroke-width="1.6" marker-end="url(#arr2)"/>
+        <!-- Tempo (x=618) -->
+        <g class="dg-acc" fill="none" stroke-width="2">
+          <path d="M594 58 L642 58 L594 106 L642 106 Z"/>
+          <line x1="586" y1="82" x2="650" y2="82"/>
+        </g>
+        <!-- flechas: todas de 49px, sobre el eje y=82 -->
+        <g stroke="#4d4b49" stroke-width="1.4" fill="none">
+          <line x1="107" y1="82" x2="156" y2="82" marker-end="url(#arr)"/>
+          <line x1="246" y1="82" x2="295" y2="82" marker-end="url(#arr)"/>
+          <line x1="385" y1="82" x2="434" y2="82" marker-end="url(#arr)"/>
+          <line x1="524" y1="82" x2="573" y2="82" marker-end="url(#arr)"/>
+        </g>
+        <!-- etiquetas, centradas bajo cada icono -->
+        <text x="62"  y="140" text-anchor="middle" class="dg-lbl dg-tink" data-i18n="dgB_1">field</text>
+        <text x="201" y="140" text-anchor="middle" class="dg-lbl dg-tink" data-i18n="dgB_2">data</text>
+        <text x="340" y="140" text-anchor="middle" class="dg-lbl dg-tink" data-i18n="dgB_3">structure</text>
+        <text x="479" y="140" text-anchor="middle" class="dg-lbl dg-tink" data-i18n="dgB_4">closed dynamics</text>
+        <text x="618" y="140" text-anchor="middle" class="dg-lbl dg-tacc" data-i18n="dgB_5">Tempo</text>
+      </svg>
+      <p class="cap" data-i18n="dgB_cap">Coherent Data · only the coherent persists: from vibration to Tempo</p>
+    </div>
+  </section>
+
   <section id="timeline">
     <h2 data-i18n="h_timeline">Tempo</h2>
     <ul class="timeline">
@@ -287,6 +386,15 @@
     <p data-i18n="about_1">I am Mateo Moreira, an independent researcher from Uruguay. T≡M did not begin as a paper: it began as a childhood memory — hopping across the same-colored tiles of a sidewalk — and became words for the first time in an email written in 2018.</p>
     <p data-i18n="about_2">Everything that followed — the theory, its revisions, the Companion Paper, Coherent Data — is published with a DOI, including the corrections. This site gathers all of it in one place.</p>
   </section>
+
+  <div class="seal" aria-hidden="true">
+    <svg viewBox="0 0 100 100">
+      <g fill="none" stroke="#807d7a" stroke-width="4">
+        <path d="M22 20 L78 20 L22 84 L78 84 Z"/>
+        <line x1="12" y1="52" x2="88" y2="52"/>
+      </g>
+    </svg>
+  </div>
 
   <footer>
     <p>Mateo Moreira · <a href="mailto:mateomoreira@gmail.com">mateomoreira@gmail.com</a> ·
@@ -656,6 +764,12 @@
       ph_5: 'Every version remains publicly archived with a DOI.',
       tagline: 'Research on the foundations of time and coherent data',
       nav_home: 'Home', nav_archive: 'Archive', nav_rev: 'Revisions', nav_phil: 'Philosophy', nav_about: 'About',
+      h_visual: 'The theory at a glance',
+      dgA_1: 'cosmological expansion \u00b7 the root tick', dgA_2: 'galactic rotation', dgA_3: 'planetary orbits', dgA_4: 'atomic oscillations \u00b7 clocks',
+      dgA_5: 'every motion is a tempo;', dgA_6: 'every tempo nests in the root tick',
+      dgA_cap: 'T\u2261M \u00b7 time is motion: the expansion is the root tick',
+      dgB_1: 'field', dgB_2: 'data', dgB_3: 'structure', dgB_4: 'closed dynamics', dgB_5: 'Tempo',
+      dgB_cap: 'Coherent Data \u00b7 only the coherent persists: from vibration to Tempo',
       h_cite: 'How to cite',
       h_about: 'About',
       about_1: 'I am Mateo Moreira, an independent researcher from Uruguay. T\u2261M did not begin as a paper: it began as a childhood memory \u2014 hopping across the same-colored tiles of a sidewalk \u2014 and became words for the first time in an email written in 2018.',
@@ -692,6 +806,12 @@
       ph_5: 'Todas las versiones quedan archivadas p\u00fablicamente con DOI.',
       tagline: 'Investigaci\u00f3n sobre los fundamentos del tiempo y los datos coherentes',
       nav_home: 'Inicio', nav_archive: 'Archivo', nav_rev: 'Revisiones', nav_phil: 'M\u00e9todo', nav_about: 'Autor',
+      h_visual: 'La teor\u00eda de un vistazo',
+      dgA_1: 'expansi\u00f3n cosmol\u00f3gica \u00b7 el root tick', dgA_2: 'rotaci\u00f3n gal\u00e1ctica', dgA_3: '\u00f3rbitas planetarias', dgA_4: 'oscilaciones at\u00f3micas \u00b7 relojes',
+      dgA_5: 'cada movimiento es un tempo;', dgA_6: 'cada tempo anida en el root tick',
+      dgA_cap: 'T\u2261M \u00b7 el tiempo es movimiento: la expansi\u00f3n es el root tick',
+      dgB_1: 'campo', dgB_2: 'dato', dgB_3: 'estructura', dgB_4: 'din\u00e1mica cerrada', dgB_5: 'Tempo',
+      dgB_cap: 'Datos Coherentes \u00b7 solo lo coherente persiste: de la vibraci\u00f3n al Tempo',
       h_cite: 'C\u00f3mo citar',
       h_about: 'Sobre el autor',
       about_1: 'Soy Mateo Moreira, investigador independiente de Uruguay. T\u2261M no empez\u00f3 como un paper: empez\u00f3 como un recuerdo de infancia, saltando sobre las baldosas del mismo color de una vereda, y se volvi\u00f3 palabras por primera vez en un email escrito en 2018.',
