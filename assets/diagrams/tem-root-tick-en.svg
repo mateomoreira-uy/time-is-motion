@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- T≡M · the root tick and nested motions · CC BY 4.0 Mateo Moreira -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" role="img" aria-label="Root tick and nested motions">
+<style>
+  .dg-ink{ stroke:#eae7e2; } .dg-mid{ stroke:#807d7a; } .dg-soft{ stroke:#4d4b49; } .dg-acc{ stroke:#d95436; }
+  .dg-tink{ fill:#eae7e2; } .dg-tmid{ fill:#807d7a; } .dg-tacc{ fill:#d95436; }
+  .dg-lbl{ font:11px 'Courier New', monospace; letter-spacing:.06em; }
+</style>
+<rect width="700" height="380" fill="#1a1918"/>
+        <!-- nucleo: el root tick -->
+        <circle cx="230" cy="190" r="48" fill="none" class="dg-acc" stroke-width="2"/>
+        <g class="dg-acc" stroke-width="2">
+          <line x1="278.0" y1="190.0" x2="287.0" y2="190.0"/>
+          <line x1="263.9" y1="156.1" x2="270.3" y2="149.7"/>
+          <line x1="230.0" y1="142.0" x2="230.0" y2="133.0"/>
+          <line x1="196.1" y1="156.1" x2="189.7" y2="149.7"/>
+          <line x1="182.0" y1="190.0" x2="173.0" y2="190.0"/>
+          <line x1="196.1" y1="223.9" x2="189.7" y2="230.3"/>
+          <line x1="230.0" y1="238.0" x2="230.0" y2="247.0"/>
+          <line x1="263.9" y1="223.9" x2="270.3" y2="230.3"/>
+        </g>
+        <text x="230" y="197" text-anchor="middle" class="dg-tacc" font-size="20" font-family="Courier New, monospace">≡</text>
+        <!-- capas anidadas, hacia afuera -->
+        <circle cx="230" cy="190" r="86"  fill="none" class="dg-mid" stroke-width="1.4"/>
+        <circle cx="230" cy="190" r="122" fill="none" class="dg-mid" stroke-width="1.2"/>
+        <circle cx="230" cy="190" r="158" fill="none" class="dg-soft" stroke-width="1.2"/>
+        <!-- guias -->
+        <g class="dg-soft" stroke-width="1" stroke-dasharray="2 4">
+          <line x1="343" y1="80"  x2="392" y2="80"/>
+          <line x1="332" y1="123" x2="392" y2="123"/>
+          <line x1="312" y1="163" x2="392" y2="163"/>
+          <line x1="276" y1="203" x2="392" y2="203"/>
+        </g>
+        <!-- etiquetas -->
+        <text x="400" y="84"  class="dg-lbl dg-tink">atomic oscillations · clocks</text>
+        <text x="400" y="127" class="dg-lbl dg-tink">planetary orbits</text>
+        <text x="400" y="167" class="dg-lbl dg-tink">galactic rotation</text>
+        <text x="400" y="207" class="dg-lbl dg-tacc">cosmological expansion · the root tick</text>
+        <text x="400" y="262" class="dg-lbl dg-tmid">every motion is a tempo;</text>
+        <text x="400" y="280" class="dg-lbl dg-tmid">every tempo nests in the root tick</text>
+      </svg>

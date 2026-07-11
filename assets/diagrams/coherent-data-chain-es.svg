@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Datos Coherentes · del campo al Tempo · CC BY 4.0 Mateo Moreira -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 190" role="img" aria-label="Field, data, structure, closed dynamics, Tempo">
+<style>
+  .dg-ink{ stroke:#eae7e2; } .dg-mid{ stroke:#807d7a; } .dg-soft{ stroke:#4d4b49; } .dg-acc{ stroke:#d95436; }
+  .dg-tink{ fill:#eae7e2; } .dg-tmid{ fill:#807d7a; } .dg-tacc{ fill:#d95436; }
+  .dg-lbl{ font:11px 'Courier New', monospace; letter-spacing:.06em; }
+</style>
+<rect width="700" height="190" fill="#1a1918"/>
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M1 1L8 5L1 9" fill="none" stroke="#4d4b49" stroke-width="1.4"/>
+          </marker>
+          <marker id="arr2" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M1 1L8 5L1 9" fill="none" stroke="#eae7e2" stroke-width="1.6"/>
+          </marker>
+        </defs>
+        <!-- campo (centro x=62) -->
+        <g class="dg-mid" fill="none" stroke-width="1.4">
+          <path d="M34 66 q 14 -14 28 0 t 28 0"/>
+          <path d="M34 82 q 14 -14 28 0 t 28 0"/>
+          <path d="M34 98 q 14 -14 28 0 t 28 0"/>
+        </g>
+        <!-- dato (x=201) -->
+        <circle cx="201" cy="82" r="6" fill="#eae7e2"/>
+        <circle cx="201" cy="82" r="14" fill="none" class="dg-mid" stroke-width="1.2"/>
+        <!-- estructura (x=340) -->
+        <g class="dg-mid" stroke-width="1.2">
+          <line x1="340" y1="60" x2="366" y2="102"/><line x1="366" y1="102" x2="314" y2="102"/><line x1="314" y1="102" x2="340" y2="60"/>
+        </g>
+        <circle cx="340" cy="60" r="5" fill="#eae7e2"/><circle cx="366" cy="102" r="5" fill="#eae7e2"/><circle cx="314" cy="102" r="5" fill="#eae7e2"/>
+        <!-- dinamica cerrada (x=479) -->
+        <path d="M468.9 60.3 A 24 24 0 1 1 457.2 71.9" fill="none" class="dg-ink" stroke-width="1.6" marker-end="url(#arr2)"/>
+        <!-- Tempo (x=618) -->
+        <g class="dg-acc" fill="none" stroke-width="2">
+          <path d="M594 58 L642 58 L594 106 L642 106 Z"/>
+          <line x1="586" y1="82" x2="650" y2="82"/>
+        </g>
+        <!-- flechas: todas de 49px, sobre el eje y=82 -->
+        <g stroke="#4d4b49" stroke-width="1.4" fill="none">
+          <line x1="107" y1="82" x2="156" y2="82" marker-end="url(#arr)"/>
+          <line x1="246" y1="82" x2="295" y2="82" marker-end="url(#arr)"/>
+          <line x1="385" y1="82" x2="434" y2="82" marker-end="url(#arr)"/>
+          <line x1="524" y1="82" x2="573" y2="82" marker-end="url(#arr)"/>
+        </g>
+        <!-- etiquetas, centradas bajo cada icono -->
+        <text x="62"  y="140" text-anchor="middle" class="dg-lbl dg-tink">campo</text>
+        <text x="201" y="140" text-anchor="middle" class="dg-lbl dg-tink">dato</text>
+        <text x="340" y="140" text-anchor="middle" class="dg-lbl dg-tink">estructura</text>
+        <text x="479" y="140" text-anchor="middle" class="dg-lbl dg-tink">dinámica cerrada</text>
+        <text x="618" y="140" text-anchor="middle" class="dg-lbl dg-tacc">Tempo</text>
+      </svg>
