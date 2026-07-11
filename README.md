@@ -2,7 +2,7 @@
 
 **Investigación independiente / Independent research · Mateo Moreira (Uruguay)**
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17514233-1682D4)](https://doi.org/10.5281/zenodo.17514233)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17514233.svg)](https://doi.org/10.5281/zenodo.17514233)
 [![Site](https://img.shields.io/badge/site-time--is--motion-d95436)](https://mateomoreira-uy.github.io/time-is-motion/)
 [![License: CC BY 4.0](https://img.shields.io/badge/papers-CC%20BY%204.0-807d7a)](LICENSE-papers.md)
 
@@ -27,7 +27,7 @@ sede del sitio web del proyecto.
 | T≡M Theory — Time Is Motion | v1.0 | Nov 2025 | [10.5281/zenodo.17514234](https://doi.org/10.5281/zenodo.17514234) | [EN](papers/tem/tem-v1.0-en.pdf) · [ES](papers/tem/tem-v1.0-es.pdf) |
 | T≡M Theory — Time Is Motion: Cosmological Expansion as the Root Tick | v2.0 | Mar 2026 | [10.5281/zenodo.18856653](https://doi.org/10.5281/zenodo.18856653) | [EN](papers/tem/tem-v2.0-en.pdf) · [ES](papers/tem/tem-v2.0-es.pdf) |
 | T≡M Theory — Time Is Motion: Cosmological Expansion as the Root Tick | v2.1 | Jun 2026 | [10.5281/zenodo.20779567](https://doi.org/10.5281/zenodo.20779567) | [EN](papers/tem/tem-v2.1-en.pdf) · [ES](papers/tem/tem-v2.1-es.pdf) |
-| Teoría T≡M — Consecuencias Abductivas de la Unificación en Tempo (Companion Paper) | v1.0 | May 2026 | [10.5281/zenodo.20349781](https://doi.org/10.5281/zenodo.20349781) | [EN](papers/companion/companion-v1.0-en.pdf) · [ES](papers/companion/companion-v1.0-es.pdf) |
+| T≡M Theory — Abductive Consequences of the Tempo Unification (Companion Paper) | v1.0 | May 2026 | [10.5281/zenodo.20349781](https://doi.org/10.5281/zenodo.20349781) | [EN](papers/companion/companion-v1.0-en.pdf) · [ES](papers/companion/companion-v1.0-es.pdf) |
 | T≡M Theory — Abductive Consequences of the Tempo Unification (Companion Paper) | v1.1 | Jul 2026 | [10.5281/zenodo.21208371](https://doi.org/10.5281/zenodo.21208371) | [EN](papers/companion/companion-v1.1-en.pdf) · [ES](papers/companion/companion-v1.1-es.pdf) |
 | Coherent Data — Only the Coherent Exists: An Informational Ontology of the Universe | v1.0 | Jul 2026 | [10.5281/zenodo.21230276](https://doi.org/10.5281/zenodo.21230276) | [EN](papers/coherent-data/coherent-data-v1.0-en.pdf) · [ES](papers/coherent-data/coherent-data-v1.0-es.pdf) |
 | Tempo Symbol Identity — T≡M Theory — Time Is Motion (pack de diseño del símbolo) | v1.0 | Nov 2025 | [10.5281/zenodo.17545235](https://doi.org/10.5281/zenodo.17545235) | — |
@@ -70,5 +70,4 @@ EN/ES, con la animación T≡M en canvas (sin dependencias, 15KB).
 
 Mateo Moreira · mateomoreira@gmail.com · Uruguay
 ORCID: [0009-0001-8318-4962](https://orcid.org/0009-0001-8318-4962)
-LinkedIn: [LinkedIn](https://www.linkedin.com/in/mateo-moreira)
 Artículos de divulgación: [Medium](https://medium.com/@mateomoreira_83879)
