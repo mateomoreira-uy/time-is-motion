@@ -87,6 +87,11 @@
   .dg-ink{ stroke:#eae7e2; } .dg-mid{ stroke:#807d7a; } .dg-soft{ stroke:#4d4b49; } .dg-acc{ stroke:#d95436; }
   .dg-tink{ fill:#eae7e2; } .dg-tmid{ fill:#807d7a; } .dg-tacc{ fill:#d95436; }
   .dg-lbl{ font:11px 'Courier New', monospace; letter-spacing:.06em; }
+  .articles li{ list-style:none; padding:16px 0; border-bottom:1px solid #2b2a28; max-width:680px; }
+  .articles .art-t{ font-size:17px; }
+  .articles .art-d{ font-size:14.5px; color:#c9c6c1; margin-top:3px; }
+  .articles .src{ font:11px 'Courier New', monospace; letter-spacing:.1em; color:var(--mid); text-transform:uppercase; margin-top:7px; }
+  .articles .src a{ color:var(--accent); }
   .seal{ display:flex; justify-content:center; margin-top:80px; }
   .seal svg{ width:44px; height:44px; opacity:.85; }
   footer{ margin-top:90px; padding-top:24px; border-top:1px solid var(--soft); font-size:14px; color:var(--mid); }
@@ -217,6 +222,7 @@
     <a href="#archive" data-i18n="nav_archive">Archive</a>
     <a href="#revisions" data-i18n="nav_rev">Revisions</a>
     <a href="#philosophy" data-i18n="nav_phil">Philosophy</a>
+    <a href="#articles">Articles</a>
     <a href="#about" data-i18n="nav_about">About</a>
   </nav>
   <div class="tem-lang">
@@ -388,6 +394,20 @@
   doi       = {10.5281/zenodo.20779567},
   url       = {https://doi.org/10.5281/zenodo.20779567}
 }</pre>
+  </section>
+
+  <section id="articles" class="articles">
+    <h2>Articles</h2>
+    <ul>
+      <li>
+        <div class="art-t" data-i18n="art1_t">Why I Believe Time Is Motion</div>
+        <div class="art-d" data-i18n="art1_d">The story behind the intuition — from a childhood memory to a testable claim.</div>
+        <div class="src">Medium · Jul 2026 ·
+          <a href="https://medium.com/@mateomoreira_83879/why-i-believe-time-is-motion-fb723a69d15d">EN</a> ·
+          <a href="https://medium.com/@mateomoreira_83879/por-qu%C3%A9-creo-que-el-tiempo-es-movimiento-9464b4439c7a">ES</a>
+        </div>
+      </li>
+    </ul>
   </section>
 
   <section id="about" class="about">
@@ -779,6 +799,8 @@
       dgA_cap: 'T\u2261M \u00b7 time is motion: the expansion is the root tick',
       dgB_1: 'field', dgB_2: 'data', dgB_3: 'structure', dgB_4: 'closed dynamics', dgB_5: 'Tempo',
       dgB_cap: 'Coherent Data \u00b7 only the coherent persists: from vibration to Tempo',
+      art1_t: 'Why I Believe Time Is Motion',
+      art1_d: 'The story behind the intuition \u2014 from a childhood memory to a testable claim.',
       h_cite: 'How to cite',
       h_about: 'About',
       about_1: 'I am Mateo Moreira, an independent researcher from Uruguay. T\u2261M did not begin as a paper: it began as a childhood memory \u2014 hopping across the same-colored tiles of a sidewalk \u2014 and became words for the first time in an email written in 2018.',
@@ -821,6 +843,8 @@
       dgA_cap: 'T\u2261M \u00b7 el tiempo es movimiento: la expansi\u00f3n es el root tick',
       dgB_1: 'campo', dgB_2: 'dato', dgB_3: 'estructura', dgB_4: 'din\u00e1mica cerrada', dgB_5: 'Tempo',
       dgB_cap: 'Datos Coherentes \u00b7 solo lo coherente persiste: de la vibraci\u00f3n al Tempo',
+      art1_t: 'Por qu\u00e9 creo que el tiempo es movimiento',
+      art1_d: 'La historia detr\u00e1s de la intuici\u00f3n: de un recuerdo de infancia a una afirmaci\u00f3n contrastable.',
       h_cite: 'C\u00f3mo citar',
       h_about: 'Sobre el autor',
       about_1: 'Soy Mateo Moreira, investigador independiente de Uruguay. T\u2261M no empez\u00f3 como un paper: empez\u00f3 como un recuerdo de infancia, saltando sobre las baldosas del mismo color de una vereda, y se volvi\u00f3 palabras por primera vez en un email escrito en 2018.',
@@ -875,6 +899,7 @@
     { id: 'archive',    sel: '[href="#archive"]' },
     { id: 'revisions',  sel: '[href="#revisions"]' },
     { id: 'philosophy', sel: '[href="#philosophy"]' },
+    { id: 'articles',   sel: '[href="#articles"]' },
     { id: 'about',      sel: '[href="#about"]' }
   ];
   var links = spy.map(function(s){ return document.querySelector('.topbar nav ' + s.sel); });
