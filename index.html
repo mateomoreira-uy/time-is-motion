@@ -62,6 +62,7 @@
   .tagline{ font-size:15px; color:var(--mid); margin-top:4px; font-style:italic; }
   .thesis{ margin-top:26px; font-size:19px; max-width:640px; }
   section{ margin-top:72px; }
+  header.site + section{ margin-top:40px; }
   h2{ font:15px 'Courier New', monospace; letter-spacing:.28em; text-transform:uppercase; color:var(--mid); border-bottom:1px solid var(--soft); padding-bottom:10px; margin-bottom:26px; }
   .timeline li{ list-style:none; display:flex; gap:18px; padding:9px 0; border-bottom:1px dashed #2b2a28; font-family:'Courier New', monospace; font-size:14px; }
   .timeline .yr{ color:var(--accent); min-width:52px; }
@@ -70,6 +71,10 @@
   td{ padding:12px 10px 12px 0; border-bottom:1px solid #2b2a28; vertical-align:top; }
   .docdesc{ font-size:13px; color:var(--mid); margin-top:2px; }
   a{ color:var(--accent); text-decoration:none; }
+  .oq-link{ display:inline-block; font:12px 'Courier New', monospace; letter-spacing:.12em; text-transform:uppercase;
+            color:var(--accent); border:1px solid var(--accent); border-radius:3px; padding:9px 14px 8px;
+            line-height:1; transition:background .18s ease, color .18s ease; }
+  .oq-link:hover{ background:#b8452b; border-color:#b8452b; color:#f2ede8; text-decoration:none; }
   a:hover{ text-decoration:underline; }
   .muted{ color:var(--mid); }
   .rev{ margin-bottom:28px; }
@@ -242,7 +247,7 @@
     <p class="subtitle" data-i18n="subtitle">Independent research · Mateo Moreira · Uruguay</p>
     <p class="tagline" data-i18n="tagline">Research on the foundations of time and coherent data</p>
     <p class="thesis" data-i18n="thesis">Time is not a container in which things move: time <em>is</em> motion. One hypothesis, its abductive consequences, and the ontology beneath it.</p>
-    <p style="margin-top:14px;"><a href="open-question.html" class="oq-link" style="font:12px 'Courier New', monospace; letter-spacing:.12em; text-transform:uppercase;" data-i18n="oq_link">Research note · the open question →</a></p>
+    <p style="margin-top:40px;"><a href="open-question.html" class="oq-link" data-i18n="oq_link">Research note · the open question →</a></p>
   </header>
 
 
