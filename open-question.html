@@ -11,9 +11,10 @@
   *{ margin:0; padding:0; box-sizing:border-box; }
   body{ background:var(--bg); color:var(--ink); font-family:Georgia, 'Times New Roman', serif; line-height:1.75; }
   main{ max-width:720px; margin:0 auto; padding:40px 20px 80px; }
-  .back{ font:12px 'Courier New', monospace; letter-spacing:.12em; text-transform:uppercase; }
-  .back a{ color:var(--mid); text-decoration:none; }
-  .back a:hover{ color:var(--ink); }
+  .back a{ display:inline-block; font:12px 'Courier New', monospace; letter-spacing:.12em; text-transform:uppercase;
+           color:var(--mid); border:1px solid var(--soft); border-radius:3px; padding:9px 14px 8px; line-height:1;
+           text-decoration:none; transition:background .18s ease, color .18s ease, border-color .18s ease; }
+  .back a:hover{ background:#2b2a28; border-color:var(--mid); color:var(--ink); }
   h1{ font-size:clamp(26px,4.5vw,36px); font-weight:normal; margin-top:26px; }
   .sub{ color:var(--mid); font-size:15px; margin-top:6px; font-style:italic; }
   h2{ font:13px 'Courier New', monospace; letter-spacing:.24em; text-transform:uppercase; color:var(--mid); border-bottom:1px solid var(--soft); padding-bottom:8px; margin:44px 0 16px; }
