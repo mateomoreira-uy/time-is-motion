@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://mateomoreira-uy.github.io/time-is-motion/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mateomoreira-uy.github.io/time-is-motion/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mateomoreira-uy.github.io/time-is-motion/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mateomoreira-uy.github.io/time-is-motion/"/>
+  </url>
+  <url>
+    <loc>https://mateomoreira-uy.github.io/time-is-motion/open-question.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
