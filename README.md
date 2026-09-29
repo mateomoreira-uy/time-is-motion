@@ -10,9 +10,8 @@
 
 Este repositorio reúne el corpus completo de la teoría T≡M y sus trabajos derivados:
 la hipótesis central (el tiempo y el movimiento como el mismo principio, con la
-expansión cosmológica como *root tick*), sus consecuencias abductivas, y la ontología
-informacional que le sirve de sustrato (*Datos Coherentes*). Todo, incluidas las
-correcciones, queda registrado.
+expansión cosmológica como *root tick*) y sus consecuencias abductivas. Todo,
+incluidas las correcciones, queda registrado.
 
 Todos los documentos están publicados en [Zenodo](https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Moreira%2C%20Mateo%22)
 con DOI. Este repositorio funciona como archivo espejo, historial de versiones y
@@ -29,7 +28,8 @@ sede del sitio web del proyecto.
 | T≡M Theory — Time Is Motion: Cosmological Expansion as the Root Tick | v2.1 | Jun 2026 | [10.5281/zenodo.20779567](https://doi.org/10.5281/zenodo.20779567) | [EN](papers/tem/tem-v2.1-en.pdf) · [ES](papers/tem/tem-v2.1-es.pdf) |
 | T≡M Theory — Abductive Consequences of the Tempo Unification (Companion Paper) | v1.0 | May 2026 | [10.5281/zenodo.20349781](https://doi.org/10.5281/zenodo.20349781) | [EN](papers/companion/companion-v1.0-en.pdf) · [ES](papers/companion/companion-v1.0-es.pdf) |
 | T≡M Theory — Abductive Consequences of the Tempo Unification (Companion Paper) | v1.1 | Jul 2026 | [10.5281/zenodo.21208371](https://doi.org/10.5281/zenodo.21208371) | [EN](papers/companion/companion-v1.1-en.pdf) · [ES](papers/companion/companion-v1.1-es.pdf) |
-| Coherent Data — Only the Coherent Exists: An Informational Ontology of the Universe | v1.0 | Jul 2026 | [10.5281/zenodo.21230276](https://doi.org/10.5281/zenodo.21230276) | [EN](papers/coherent-data/coherent-data-v1.0-en.pdf) · [ES](papers/coherent-data/coherent-data-v1.0-es.pdf) |
+| T≡M Theory — Time Is Motion: Cosmological Expansion as the Root Tick | v2.2 | Sep 2026 | [10.5281/zenodo.22901969](https://doi.org/10.5281/zenodo.22901969) | [EN](papers/tem/tem-v2.2-en.pdf) · [ES](papers/tem/tem-v2.2-es.pdf) |
+| T≡M Theory — Abductive Consequences of the Tempo Unification (Companion Paper) | v1.2 | Sep 2026 | [10.5281/zenodo.22923299](https://doi.org/10.5281/zenodo.22923299) | [EN](papers/companion/companion-v1.2-en.pdf) · [ES](papers/companion/companion-v1.2-es.pdf) |
 | Tempo Symbol Identity — T≡M Theory — Time Is Motion (pack de diseño del símbolo) | v1.0 | Nov 2025 | [10.5281/zenodo.17545235](https://doi.org/10.5281/zenodo.17545235) | — |
 
 ## Línea de tiempo
@@ -39,7 +39,7 @@ sede del sitio web del proyecto.
 2025 · T≡M v1.0: la hipótesis publicada · Tempo Symbol Identity: el símbolo
 2026 · v2.0 → v2.1: del residuo constante al drift diferencial (ε_R)
 2026 · Companion Paper: consecuencias abductivas
-2026 · Datos Coherentes: la ontología del sustrato
+2026 · v2.1 → v2.2: el cierre como condición del tiempo propio (T≡M-4)
   …  · Trabajo futuro
 ```
 
@@ -59,7 +59,7 @@ EN/ES, con la animación T≡M en canvas (sin dependencias, 15KB).
 ## Cita sugerida / Suggested citation
 
 > Moreira, M. (2026). *T≡M Theory — Time Is Motion: Cosmological Expansion as the
-> Root Tick* (v2.1). Zenodo. https://doi.org/10.5281/zenodo.20779567
+> Root Tick* (v2.2). Zenodo. https://doi.org/10.5281/zenodo.22901969
 
 ## Licencias
 
